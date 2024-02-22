@@ -105,10 +105,8 @@ body {
 }
 
 .navbar__wrap .menu > li > a:hover {
-    transition: color 500ms linear;
+    transition: color 50ms linear;
     color: black;
-
-
 }
 
 @media (max-width: 1000px) {
@@ -124,7 +122,6 @@ body {
   .hamb__field {
     padding: 10px 20px;
     cursor: pointer;
-
   }
 
   .bar {
@@ -147,9 +144,11 @@ body {
     display: flex;
     transition: 0.3s;
   }
+
   .popup.open {
     right: 0;
   }
+
   .popup .menu {
     width: 100%;
     height: 100%;
@@ -183,10 +182,11 @@ body {
   .hamb__field.active .bar:nth-child(2) {
     opacity: 0;
   }
+
   .hamb__field.active .bar:nth-child(1) {
     position: sticky;
     transform-origin: top right;
-    transform: translateY(-2px) rotate(-45deg);
+    transform: translateY(-2.27px) rotate(-45deg);
     background-color: black;
     z-index: 10;
 
@@ -194,7 +194,7 @@ body {
   .hamb__field.active .bar:nth-child(3) {
     position: sticky;
     transform-origin: bottom right;
-    transform: translateY(2px) rotate(45deg);
+    transform: translateY(2.27px) rotate(45deg);
     background-color: black;
     z-index: 10;
 

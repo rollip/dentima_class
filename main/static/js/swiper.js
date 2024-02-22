@@ -20,3 +20,8 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+
+let sidebar = document.getElementById("sidebar");
+if (sidebar.childElementCount > 0) {
+  // Do something
+}

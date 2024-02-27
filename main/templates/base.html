@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href=" {% static 'css/reset.css' %} " />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Marque -->
+    <link rel="stylesheet" href="{% static 'css/marque.css' %}" />
     <!-- Banner -->
     <link rel="stylesheet" href="{% static 'css/banner.css' %}" />
 
@@ -17,11 +19,13 @@
 
     <title>Dentima Class </title>
   </head>
+
+
+
   <body>
     <nav class="navbar">
       <div class="container">
         <div class="navbar__wrap">
-
           <a href="#" class="logo" id="logo">Dentima Class</a>
           <ul class="menu" id="menu">
             <li><a href="#">Home</a></li>
@@ -54,11 +58,6 @@
 
     <main class="main">
 
-
-
-
-       <!-- Main page banner -->
-
     <!-- Main page banner -->
     <div class="banner-container-wrap">
       <div class="container">
@@ -71,85 +70,69 @@
 
 
 
+    <!-- Slider main container -->
+    <div class="container">
+        <h1 class="swiper-header"> Актуальные семинары </h1>
+        <div class="swiper">
 
-
-
-
-
-
-      <!-- Slider main container -->
-      <div class="container">
-          <h1 class="swiper-header"> Актуальные семинары </h1>
-          <div class="swiper">
-
-        <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-
-                <!-- Slides -->
-                    <div class="swiper-slide">
-
-                      <div class="swiper-seminar">
-
-                        <div class="img-container">
-                          <div class="img-wrapper">
-                        <img src="{% static 'img/opis.png' %}">
-                            </div>
-                          <div class="img-wrapper">
-                        <img2 src="{% static 'img/image_1.png' %}">
-                            </div>
-
+      <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="swiper-seminar">
+                      <div class="img-container">
+                        <div class="img-wrapper">
+                          <img src="{% static 'img/opis.png' %}">
                         </div>
-                        <div class="text-container">
-                            <p class="author"> Александр Амиянц </p>
-                            <p class="title">   — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
-                            <div class="tag-container">
-                                <p class="tag"> #стоматологу </p>
-                                <p class="tag"> #имплантологу </p>
+                        <div class="img-wrapper">
+                            <img2 src="{% static 'img/image_1.png' %}">
+                        </div>
+                      </div>
+                      <div class="text-container">
+                          <p class="author"> Александр Амиянц </p>
+                          <p class="title">   — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
+                          <div class="tag-container">
                               <p class="tag"> #стоматологу </p>
-                                <p class="tag"> #имплантологу </p>
-
-                            </div>
-
-                                                  <div class="seminar-bottom">
-                                <p class="date"> 21.01.2024 </p>
-                                <a href = '#' class="button"> Подробнее </a>
-                        </div>
-                        </div>
-
-
-
-                        </div>
-                    </div>
-                            <div class="swiper-slide">
-                      <div class="swiper-seminar">
-                        <div class="img-container">
-                          <div class="img-wrapper">
-                        <img src="{% static 'img/image_1.png' %}">
-                            </div>
-                          <div class="im2g-wrapper">
-                          <im2g src="{% static 'img/image_1.png' %}">
-                            </div>
-                        </div>
-                        <div class="text-container">
-                            <p class="author"> Александр Амиянц </p>
-                            <p class="title"> Реставра фронального рРеставра фронального резца при сквоРеставра фронального резца при сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
-                            <div class="tag-container">
-                                <p class="tag"> #стоматологу </p>
-                                <p class="tag"> #имплантологу </p>
-                            </div>
-                        </div>
-
-                        <div class="seminar-bottom">
-                                <p class="date"> 21.01.2024 </p>
-                                <a href = '#' class="button"> Подробнее </a>
-                        </div>
-
-                        </div>
-                    </div>
+                              <p class="tag"> #имплантологу </p>
+                              <p class="tag"> #стоматологу </p>
+                              <p class="tag"> #имплантологу </p>
+                          </div>
+                              <div class="seminar-bottom">
+                              <p class="date"> 21.01.2024 </p>
+                              <a href = '#' class="button"> Подробнее </a>
+                      </div>
+                      </div>
+                      </div>
+                  </div>
 
 
+                  <div class="swiper-slide">
+                    <div class="swiper-seminar">
+                      <div class="img-container">
+                        <div class="img-wrapper">
+                      <img src="{% static 'img/image_1.png' %}">
+                          </div>
+                        <div class="im2g-wrapper">
+                        <im2g src="{% static 'img/image_1.png' %}">
+                          </div>
+                      </div>
+                      <div class="text-container">
+                          <p class="author"> Александр Амиянц </p>
+                          <p class="title"> Реставра фронального рРеставра фронального резца при сквоРеставра фронального резца при сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
+                          <div class="tag-container">
+                              <p class="tag"> #стоматологу </p>
+                              <p class="tag"> #имплантологу </p>
+                          </div>
+                      </div>
 
-      </div>
+                      <div class="seminar-bottom">
+                              <p class="date"> 21.01.2024 </p>
+                              <a href = '#' class="button"> Подробнее </a>
+                      </div>
+
+                      </div>
+                  </div>
+    </div>
 
 
     <!-- If we need navigation buttons -->
@@ -160,10 +143,29 @@
 
 
 
-
-
       <div class="container">
         <div class="content">
+          <h1> Наши партнеры</h1>
+          <div class="marque">
+          <div class="wrap">
+              <div class="items-wrap">
+                <div class="items marquee reverce">
+                </div>
+                <div aria-hidden="true" class="items marquee reverce">
+                  <div class="item"><img src="{% static 'css/partners/stomat_krim.png' %}"></div>
+                  <div class="item"><img src="{% static 'css/partners/dental_magazine.png' %}"></div>
+                  <div class="item"></div>
+                  <div class="item"></div>
+                  <div class="item"></div>
+                  <div class="item"></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="container">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
             enim voluptates deserunt molestias optio ducimus odit perspiciatis
@@ -178,6 +180,36 @@
             porro provident nemo dolor maxime laboriosam. Neque porro alias
             inventore cupiditate ad.
           </p>
+                    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
+            enim voluptates deserunt molestias optio ducimus odit perspiciatis
+            cumque adipisci eius officia quae nam consequuntur necessitatibus
+            doloremque tempora, dignissimos dolore nulla corrupti labore quis,
+            beatae neque! Eum delectus vitae dolorem magni minima et tempora
+            praesentium. Perspiciatis velit inventore magnam accusamus nostrum
+            voluptatem sit voluptatibus praesentium quod porro doloremque,
+            fugiat id voluptatum laboriosam ex pariatur, est ipsa culpa sequi
+            nam explicabo ea quasi nemo? Rerum odio amet a illum, officiis ut
+            cum est, tempora mollitia consequatur vero laborum eligendi minima
+            porro provident nemo dolor maxime laboriosam. Neque porro alias
+            inventore cupiditate ad.
+          </p>
+
+                    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
+            enim voluptates deserunt molestias optio ducimus odit perspiciatis
+            cumque adipisci eius officia quae nam consequuntur necessitatibus
+            doloremque tempora, dignissimos dolore nulla corrupti labore quis,
+            beatae neque! Eum delectus vitae dolorem magni minima et tempora
+            praesentium. Perspiciatis velit inventore magnam accusamus nostrum
+            voluptatem sit voluptatibus praesentium quod porro doloremque,
+            fugiat id voluptatum laboriosam ex pariatur, est ipsa culpa sequi
+            nam explicabo ea quasi nemo? Rerum odio amet a illum, officiis ut
+            cum est, tempora mollitia consequatur vero laborum eligendi minima
+            porro provident nemo dolor maxime laboriosam. Neque porro alias
+            inventore cupiditate ad.
+          </p>
+
 
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
@@ -226,7 +258,8 @@
             Voluptate optio iste a fuga?
           </p>
         </div>
-      </div>
+
+
     </main>
 
 
@@ -237,7 +270,6 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
           enim ipsam, velit nemo pariatur totam fuga quo iste explicabo alias
           sequi, quam in possimus praesentium ex maxime libero voluptatum. Sint?
-
         </div>
       </div>
     </footer>

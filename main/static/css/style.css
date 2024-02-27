@@ -20,12 +20,15 @@ body {
   height: 100%;
 }
 
+.navbar .container {
+    height: 100%;
 
+}
 .container {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  height: 100%;
+
   padding: 0 15px;
   padding: 0 15px;
 }
@@ -34,6 +37,20 @@ body {
   background-color: #fafafa;
   flex: 1 0 auto;
   margin-top: 75px;
+}
+
+.main h1 {
+    font-size:34px;
+    font-weight:normal;
+    color: black;
+    text-align:center;
+    padding: 3px;
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius:10px;
+
 }
 
 .footer {

@@ -1,53 +1,30 @@
 .swiper {
-  color:white;
-  margin-top: 75px;
+  color:black;
   width: 100%;
   height: auto;
 }
 
 .swiper-button-next,.swiper-button-prev {
 color:LightSteelBlue;
-}
-
-.swiper-seminar {
-    display: flex;
-    height: 700px;
-    background: purple;
-    align-items: center;
+font-size:10px;
 }
 
 
-.swiper-seminar .text-container .type {
-
+.swiper [class^="swiper-button-"]::after{
+    font-size: 25px;
 }
 
-.swiper-seminar .text-container .author {
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.swiper-seminar .text-container .name {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-
-
-.swiper-seminar .text-container .tag {
-    display: flex;
-    background: white;
-    opacity: 0.8;
-    padding: 6px;
-    margin: 2px;
-    border-radius: 7px;
-}
-
-.swiper-seminar .seminar-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.swiper-header {
+    font-size:34px;
+    font-weight:normal;
+    color: black;
+    text-align:center;
+    padding: 3px;
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius:10px;
 }
 
 .swiper-seminar .date {
@@ -56,21 +33,7 @@ color:LightSteelBlue;
     font-size: 24px;
 }
 
-.swiper .button {
-    font-size: 24px;
-    font-weight: normal;
-    color:black;
-    background: white;
-    padding: 10px;
-    margin: 6px;
-    border-radius: 7px;
-}
-
-@media (max-width: 800px) {
-
-
 .swiper-slide{
-
   display:flex;
   justify-content: center;
 }
@@ -79,14 +42,18 @@ color:LightSteelBlue;
 .swiper-seminar  {
   display:flex;
   flex-direction:column;
-  padding: 10px;
+  height: 600px;
+  padding: 5px;
   border-radius: 20px;
-  background: linear-gradient(to top left, rgba(91,246,255,1) 0%, rgba(53,135,255,1) 100%);
+  background: white;
   align-items: center;
   justify-content: center;
-  overflow:auto;
+  overflow:hidden;
   margin:8px;
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px 3px rgba(202, 203, 222, 0.5);
+  background-image: url("background/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
 
 }
 
@@ -95,18 +62,31 @@ color:LightSteelBlue;
 .swiper-seminar .img-container {
     display:flex;
     justify-content: center;
-    flex: 2 4 0;
+    flex: 1 4 0;
+    max-height:100%;
     max-width:90%;
     overflow:hidden;
+    margin: 10px;
 }
 
 .swiper-seminar .img-wrapper {
     display:flex;
-    background: white;
-    border-radius: 20px;
-    margin:10px;
+    margin:5px;
     justify-content: center;
     overflow:hidden;
+    border-radius: 20px;
+
+
+}
+.swiper-seminar .img-wrapper img{
+    background: white;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height:100%;
+
+
+
 }
 
 
@@ -115,26 +95,20 @@ color:LightSteelBlue;
 
 }
 
-.swiper-seminar .tag-container{
-    color:black;
-    display: flex;
-    width:100%;
-    text-align: center;
-    vertical-align: middle;
-    flex: 0 0 0;
-}
+
 
 .swiper-seminar .text-container {
   display: flex;
   flex-direction: column;
   height: auto;
   max-height:60%;
-  width:80%;
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
   margin: 10px;
   flex: 1 2 0;
+  max-height:400px;
+
 }
 
 .swiper-seminar .text-container .type{
@@ -142,11 +116,11 @@ color:LightSteelBlue;
 }
 
 .swiper-button-next,.swiper-button-prev {
-    color:white;
+    color:black;
 }
 
 .swiper-seminar .text-container .author {
-    font-size:35px;
+    font-size:30px;
     font-weight: bold;
     margin-top: 0px;
     margin-bottom: 10px;
@@ -154,13 +128,37 @@ color:LightSteelBlue;
     vertical-align: middle;
 }
 
-.swiper-seminar .text-container .name {
-    font-size: 20px;
+.swiper-seminar .text-container .title {
+    font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
     vertical-align: middle;
+    max-height:180px;
 }
 
+
+.swiper-seminar .tag-container{
+    color:black;
+    display: flex;
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    max-height:80px;
+}
+
+.swiper-seminar .text-container .tag {
+    display: flex;
+    background: white;
+    opacity: 0.8;
+    padding: 4px;
+    margin: 2px;
+    border-radius: 7px;
+    flex: 0 2 0;
+    font-size:12px;
+    background: white;
+    box-shadow: 0px 0px 4px 3px rgba(202, 203, 222, 0.5);
+}
 
 .seminar-bottom .date {
     display:none;
@@ -168,13 +166,66 @@ color:LightSteelBlue;
 }
 
 .swiper-seminar .seminar-bottom {
+  display: flex;
   margin-top: auto;
   flex-direction: column;
+
   flex: 0 0 0;
   }
 
 
+.swiper .button {
+    font-size: 24px;
+    font-weight: normal;
+    color:white;
+    background:#00008B;
+    opacity:0.7;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-radius: 7px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+@media (min-width: 800px) {
+
+.swiper-seminar {
+  flex-direction: row;
+  height: 400px;
+}
 
 
 
-  }
+.swiper-seminar .text-container .author {
+    text-align: left;
+    font-size: 35px;
+
+}
+
+
+.swiper-seminar .text-container .title {
+    text-align: left;
+}
+
+
+.swiper-seminar .img-container {
+    display:flex;
+    flex: 0 0 0;
+    min-width:40%;
+}
+.swiper-seminar .tag-container .tag {
+    font-size: 14px;
+
+
+}
+.swiper-seminar .button {
+    margin-top:30px;
+    width:50%;
+
+}
+
+
+
+}

@@ -20,6 +20,7 @@ body {
   height: 100%;
 }
 
+
 .container {
   width: 100%;
   max-width: 1300px;
@@ -30,9 +31,9 @@ body {
 }
 
 .main {
-  position:static;
   background-color: #fafafa;
   flex: 1 0 auto;
+  margin-top: 75px;
 }
 
 .footer {

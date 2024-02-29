@@ -1,9 +1,38 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE HTML>
-<html>
+{% block css %}
+  <!-- Banner -->
+  <link rel="stylesheet" href="{% static 'css/banner.css' %}" />
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
+
+  <!-- Marque -->
+  <link rel="stylesheet" href="{% static 'css/marque.css' %}" />
+
+{% endblock %}
 
 
-</html>
+
+{% block content %}
+
+  {% include 'includes/banner.html' %}
+  {% include 'includes/swiper.html' %}
+  {% include 'includes/marque.html' %}
+
+{% endblock %}
+
+
+{% block scripts %}
+
+  	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/swiper.js' %}" ></script>
+
+{% endblock %}
+
+
+
+
 

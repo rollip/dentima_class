@@ -8,18 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href=" {% static 'css/reset.css' %} " />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <!-- Marque -->
-    <link rel="stylesheet" href="{% static 'css/marque.css' %}" />
-    <!-- Banner -->
-    <link rel="stylesheet" href="{% static 'css/banner.css' %}" />
-
-	  <!-- Swiper -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
-
+    {% block css %} {% endblock %}
     <title>Dentima Class </title>
   </head>
-
 
 
   <body>
@@ -34,6 +25,7 @@
             <li><a href="#">Blog</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#">Звонок</a></li>
           </ul>
 
 		  <div class="hamb">
@@ -58,206 +50,7 @@
 
     <main class="main">
 
-    <!-- Main page banner -->
-    <div class="banner-container-wrap">
-      <div class="container">
-        <div class="main-banner">
-          <p class="banner-header">Dentima Class</p>
-          <p class="banner-text"> Организация стоматологических выставок и семинаров</p>
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- Slider main container -->
-    <div class="container">
-        <h1 class="swiper-header"> Актуальные семинары </h1>
-        <div class="swiper">
-
-      <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-              <!-- Slides -->
-                  <div class="swiper-slide">
-                    <div class="swiper-seminar">
-                      <div class="img-container">
-                        <div class="img-wrapper">
-                          <img src="{% static 'img/opis.png' %}">
-                        </div>
-                        <div class="img-wrapper">
-                            <img2 src="{% static 'img/image_1.png' %}">
-                        </div>
-                      </div>
-                      <div class="text-container">
-                          <p class="author"> Александр Амиянц </p>
-                          <p class="title">   — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техник сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
-                          <div class="tag-container">
-                              <p class="tag"> #стоматологу </p>
-                              <p class="tag"> #имплантологу </p>
-                              <p class="tag"> #стоматологу </p>
-                              <p class="tag"> #имплантологу </p>
-                          </div>
-                              <div class="seminar-bottom">
-                              <p class="date"> 21.01.2024 </p>
-                              <a href = '#' class="button"> Подробнее </a>
-                      </div>
-                      </div>
-                      </div>
-                  </div>
-
-
-                  <div class="swiper-slide">
-                    <div class="swiper-seminar">
-                      <div class="img-container">
-                        <div class="img-wrapper">
-                      <img src="{% static 'img/image_1.png' %}">
-                          </div>
-                        <div class="im2g-wrapper">
-                        <im2g src="{% static 'img/image_1.png' %}">
-                          </div>
-                      </div>
-                      <div class="text-container">
-                          <p class="author"> Александр Амиянц </p>
-                          <p class="title"> Реставра фронального рРеставра фронального резца при сквоРеставра фронального резца при сквоезца при сквозном дефекте — 4 класс Послойная техника</p>
-                          <div class="tag-container">
-                              <p class="tag"> #стоматологу </p>
-                              <p class="tag"> #имплантологу </p>
-                          </div>
-                      </div>
-
-                      <div class="seminar-bottom">
-                              <p class="date"> 21.01.2024 </p>
-                              <a href = '#' class="button"> Подробнее </a>
-                      </div>
-
-                      </div>
-                  </div>
-    </div>
-
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-  </div>
-
-
-
-      <div class="container">
-        <div class="content">
-          <h1> Наши партнеры</h1>
-          <div class="marque">
-          <div class="wrap">
-              <div class="items-wrap">
-                <div class="items marquee reverce">
-                </div>
-                <div aria-hidden="true" class="items marquee reverce">
-                  <div class="item"><img src="{% static 'css/partners/stomat_krim.png' %}"></div>
-                  <div class="item"><img src="{% static 'css/partners/dental_magazine.png' %}"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="container">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
-            enim voluptates deserunt molestias optio ducimus odit perspiciatis
-            cumque adipisci eius officia quae nam consequuntur necessitatibus
-            doloremque tempora, dignissimos dolore nulla corrupti labore quis,
-            beatae neque! Eum delectus vitae dolorem magni minima et tempora
-            praesentium. Perspiciatis velit inventore magnam accusamus nostrum
-            voluptatem sit voluptatibus praesentium quod porro doloremque,
-            fugiat id voluptatum laboriosam ex pariatur, est ipsa culpa sequi
-            nam explicabo ea quasi nemo? Rerum odio amet a illum, officiis ut
-            cum est, tempora mollitia consequatur vero laborum eligendi minima
-            porro provident nemo dolor maxime laboriosam. Neque porro alias
-            inventore cupiditate ad.
-          </p>
-                    <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
-            enim voluptates deserunt molestias optio ducimus odit perspiciatis
-            cumque adipisci eius officia quae nam consequuntur necessitatibus
-            doloremque tempora, dignissimos dolore nulla corrupti labore quis,
-            beatae neque! Eum delectus vitae dolorem magni minima et tempora
-            praesentium. Perspiciatis velit inventore magnam accusamus nostrum
-            voluptatem sit voluptatibus praesentium quod porro doloremque,
-            fugiat id voluptatum laboriosam ex pariatur, est ipsa culpa sequi
-            nam explicabo ea quasi nemo? Rerum odio amet a illum, officiis ut
-            cum est, tempora mollitia consequatur vero laborum eligendi minima
-            porro provident nemo dolor maxime laboriosam. Neque porro alias
-            inventore cupiditate ad.
-          </p>
-
-                    <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
-            enim voluptates deserunt molestias optio ducimus odit perspiciatis
-            cumque adipisci eius officia quae nam consequuntur necessitatibus
-            doloremque tempora, dignissimos dolore nulla corrupti labore quis,
-            beatae neque! Eum delectus vitae dolorem magni minima et tempora
-            praesentium. Perspiciatis velit inventore magnam accusamus nostrum
-            voluptatem sit voluptatibus praesentium quod porro doloremque,
-            fugiat id voluptatum laboriosam ex pariatur, est ipsa culpa sequi
-            nam explicabo ea quasi nemo? Rerum odio amet a illum, officiis ut
-            cum est, tempora mollitia consequatur vero laborum eligendi minima
-            porro provident nemo dolor maxime laboriosam. Neque porro alias
-            inventore cupiditate ad.
-          </p>
-
-
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
-            voluptatem sapiente accusantium reprehenderit, distinctio sint ad
-            perferendis non consequatur necessitatibus explicabo ullam expedita
-            nulla sit vitae laborum eos neque? Commodi dolor quidem ipsa id quo
-            perspiciatis assumenda nesciunt eligendi dicta ullam autem eveniet,
-            cum exercitationem harum hic ab, porro earum beatae. Accusantium rem
-            modi veniam corrupti doloribus quod aperiam autem ab doloremque
-            saepe magnam vitae illo dolorem ducimus fuga, debitis dignissimos
-            illum officiis ipsum ullam sed accusamus! Tempore quis alias
-            officiis voluptatum pariatur, quasi commodi mollitia, distinctio
-            quod ratione cupiditate sequi incidunt assumenda doloremque in vel
-            quas enim? Quae ipsam molestias impedit ratione, quisquam incidunt
-            numquam nihil! A voluptates, nobis incidunt vero dolore tenetur
-            impedit, ad minus accusamus voluptatum temporibus id hic?
-            Dignissimos nulla molestiae omnis suscipit veritatis quod quas
-            officia non nam. Reprehenderit, veritatis? Quas natus animi vero
-            asperiores placeat explicabo iste quaerat nemo, repellat fugiat
-            eveniet et aperiam.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            fuga expedita ex ullam minima vel recusandae sit, voluptates enim
-            dignissimos nulla veniam inventore vero quaerat et at ducimus
-            corrupti ea in temporibus nesciunt animi totam quos modi? Quaerat
-            vitae nemo eveniet, consequatur non ut omnis, aspernatur deserunt
-            soluta architecto cumque velit rem? Nesciunt ut vel voluptates
-            necessitatibus unde impedit ea architecto totam laboriosam alias.
-            Fugit necessitatibus obcaecati, nihil eveniet rerum dolorem neque
-            aut placeat nobis corrupti laborum dolores earum vero dolore culpa
-            vitae repudiandae quo reiciendis fuga. Sint corrupti quis ratione
-            dolorum ducimus dicta! Facilis qui similique necessitatibus vero
-            fugiat consequuntur amet tenetur vel quia, architecto inventore
-            magni, illo vitae a eveniet ipsam non adipisci id accusamus
-            voluptatem officiis! Quis optio modi assumenda sequi tempora harum
-            inventore officiis et pariatur recusandae ex, porro veniam atque aut
-            quae eveniet eligendi perspiciatis eius praesentium quibusdam
-            expedita in deleniti ratione? Maxime voluptatibus quod ab optio
-            cumque ullam non eos, facilis deserunt adipisci quo commodi
-            expedita? Aliquid id minima vero eius exercitationem, voluptate
-            rerum alias placeat, delectus eum quae eveniet sapiente velit
-            officia culpa. Placeat velit, optio consequuntur ad ducimus, ab
-            deserunt quibusdam reprehenderit minima nulla earum sunt facilis!
-            Voluptate optio iste a fuga?
-          </p>
-        </div>
+    {% block content %} {% endblock %}
 
 
     </main>
@@ -273,8 +66,10 @@
         </div>
       </div>
     </footer>
-    <script src="{% static 'js/script.js' %} "></script>
-  	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/swiper.js' %}" ></script>
+
+    <script src="{% static 'js/burger.js' %} "></script>
+
+    {% block scripts %} {% endblock %}
+
   </body>
 </html>

@@ -1,10 +1,13 @@
 {% load static %}
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="{% static 'css/includes/swiper.css' %}" />
 
 
 
 <!-- Slider main container -->
     <div class="container">
-        <h1 class="swiper-header"> Актуальные семинары </h1>
+        <h2 class="swiper-header"> Актуальные семинары </h2>
         <div class="swiper">
 
       <!-- Additional required wrapper -->
@@ -14,10 +17,10 @@
                     <div class="swiper-seminar">
                       <div class="img-container">
                         <div class="img-wrapper">
-                          <img src="{% static 'img/image_3.jpg' %}">
+                          <img src="{% static 'img/image_1.png' %}">
                         </div>
                         <div class="img-wrapper">
-                            <img2 src="{% static 'img/image_1.png' %}">
+                            <img src="{% static 'img/image_1.png' %}">
                         </div>
                       </div>
                       <div class="text-container">

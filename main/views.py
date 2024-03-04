@@ -7,3 +7,9 @@ def index(request):
 
 def lector(request):
     return render(request, 'lector.html')
+
+def seminar(request):
+    return render(request, 'seminar.html')
+
+def mail(request):
+    return None

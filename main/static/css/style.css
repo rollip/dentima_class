@@ -20,18 +20,31 @@ body {
   height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+
+
 .navbar .container {
     height: 100%;
-
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
 .container {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-
+  margin-top:10px;
+  margin-bottom:10px;
   padding: 0 15px;
   padding: 0 15px;
 }
+
+
 
 .main {
   background-color: #fafafa;
@@ -45,20 +58,14 @@ h1 {
 
 h2 {
     font-size:36px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 h3 {
     font-size:30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 h4 {
     font-size:30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 
@@ -84,6 +91,7 @@ h4 {
   height: 75px;
   background: white;
   z-index:9999;
+
 }
 
 .navbar__wrap {

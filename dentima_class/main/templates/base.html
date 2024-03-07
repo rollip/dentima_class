@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=" {% static 'css/reset.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block css %} {% endblock %}
+    <title>Dentima Class </title>
+  </head>
+
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar__wrap">
+          <a href="#" class="logo" id="logo">Dentima Class</a>
+          <ul class="menu" id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Prices</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Звонок</a></li>
+          </ul>
+
+		  <div class="hamb">
+            <div class="hamb__field" id="hamb">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+		  <div class="popup" id="popup"></div>
+
+		</div>
+      </div>
+    </nav>
+
+
+
+    <main class="main">
+
+    {% block content %} {% endblock %}
+
+    </main>
+
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+          enim ipsam, velit nemo pariatur totam fuga quo iste explicabo alias
+          sequi, quam in possimus praesentium ex maxime libero voluptatum. Sint?
+
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/burger.js' %} "></script>
+
+    {% block scripts %} {% endblock %}
+
+  </body>
+</html>

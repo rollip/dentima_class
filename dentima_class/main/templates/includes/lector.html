@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/lector.css' %}" />
+    <div class="container">
+        <div class="lector-box">
+            {% if lector.image %}
+                <img src="{{ lector.image.url }}">
+            {% endif %}
+
+            <div class="lector-textbox">
+                <h1> {{ lector.name }} </h1>
+                <h5> {{ lector.specialization }} </h5>
+                <h2> О лекторе </h2>
+                {{ lector.short_desc|safe }}
+                <p class="desc-short"> {{ lector.short_desc|linebreaks }} <br> <br> </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <p class="desc-long">  {{ lector.long_desc|linebreaks }}</p>
+    </div>

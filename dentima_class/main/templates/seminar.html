@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/seminar.css' %}" />
+    <script src="{% static 'js/form_processing.js' %} "> </script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="seminar-desc-box">
+        <div class="seminar-header-wrap">
+            <div class="container">
+                <div class="title">
+                    <h2>{{ seminar.name }}</h2>
+                </div>
+            <div class="org-container-top">
+                <div class="org-box">
+                    <h3 class="date"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
+                    <p class="place">{{ seminar.address}}</p>
+                </div>
+
+                <div class="org-box">
+                    <p>лектор:</p>
+                    <h3 class="lector">{{ seminar.lector.name }} </h3>
+                </div>
+                <div class="org-box">
+                    <p class="type">{{ seminar.type }}</p>
+                    <p>{{ seminar.food }}</p>
+                    <p>сертификат</p>
+                </div>
+
+            </div>
+
+                <div class="top-enroll-button">
+                        <p>Записаться</p>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="container">
+                <div class="seminar-program">
+                    <h2> Программа семинара </h2>
+                    <div class="seminar-text">
+                        {{ seminar.description|safe }}
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="container" >
+            <div class="lector-top-box">
+                <h4> ЛЕКТОР: </h4>
+                <h2> {{ lector.name }} </h2>
+                <h5> {{ lector.specialization }} </h5>
+            </div>
+            <div class="lector-bottom-box">
+                <div class="text">  {{ lector.short_desc|linebreaks }} </div>
+
+            {% if lector.image %}
+                <div class="img-wrapper">
+                    <img src="{{ lector.image.url }}" >
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container" style="display:flex">
+        <div class="pricing">
+            <h3> Стоимость</h3>
+            <p>
+                🔥Акция Ранняя оплата, до 1 февраля: 18 500 руб., 1+1 = по 18 000 руб. <br>
+🔥Студентам — 16 000 руб., 1+1 = по 15 000 руб.<br>
+                <br><br>
+
+
+СТОИМОСТЬ: при оплате до 16 февраля: 20 500 руб., 1+1 = по 20 000 руб.<br>
+При оплате после 16 февраля — 24 500 руб.<br>
+============
+<br>
+Только лекция — 10 500 руб. 1+1= по 10 000 руб.<br>
+🔥Студентам — 5 000 руб.<br>
+ 
+<br>
+ВНИМАНИЕ! Стоимость для юридических лиц +10%<br>
+<br>
+При форс-мажоре стоимость возвращается в размере 100%!<br>
+
+            </p>
+        </div>
+
+        </div>
+
+<div class="container">
+ <div class="enroll">
+
+    <form  action=''  method='post' class="form-example" onsubmit="process_form(event)">
+        <h3> Оставьте заявку: </h3>
+        {% csrf_token %}
+        <div class="text-field">
+            <input class='text-field__input' type="text" name="name" id="name" required placeholder="Имя"/>
+        </div>
+        <div class="text-field">
+            <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
+        </div>
+        <div class="text-field">
+            <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
+        </div>
+        <div class="form">
+            <input id="submit" type="submit" value="Записаться!" />
+        </div>
+
+     </form>
+</div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+{% endblock %}
+

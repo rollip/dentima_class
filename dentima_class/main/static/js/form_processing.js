@@ -39,4 +39,6 @@ function process_form(e)
     html => console.log(html)
 );
     submit.classList.add("success");
+    a = document.getElementById('form-success')
+    a.style.display = 'block'
 }

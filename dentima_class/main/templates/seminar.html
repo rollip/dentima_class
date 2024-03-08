@@ -105,7 +105,7 @@
         <h3> Оставьте заявку: </h3>
         {% csrf_token %}
         <div class="text-field">
-            <input class='text-field__input' type="text" name="name" id="name" required placeholder="Имя"/>
+            <input class='text-field__input' type="name" name="name" id="name" required placeholder="Имя"/>
         </div>
         <div class="text-field">
             <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
@@ -113,6 +113,7 @@
         <div class="text-field">
             <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
         </div>
+        <div id='form-success' class="text-field-success">Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
         <div class="form">
             <input id="submit" type="submit" value="Записаться!" />
         </div>

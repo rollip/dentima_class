@@ -6,7 +6,6 @@
   display:flex;
   align-items: center;
   font-weight: normal;
-  background-image: url("/static/img/background-seminar/background7.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% auto;
@@ -137,6 +136,14 @@ display:flex;
     display:flex;
     flex: 2 0 0;
 }
+
+
+.pricing {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+}
+
 
 .top-enroll-button {
     display:none;

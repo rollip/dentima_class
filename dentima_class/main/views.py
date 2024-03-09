@@ -31,14 +31,14 @@ def seminar(request,seminar_slug):
 
     try:
         seminar = Seminar.objects.get(slug=seminar_slug)
-        lector = Lector.objects.get(name=seminar.lector.name)
+        lectors = (seminar.lector, seminar.lector_2)
 
     except Seminar.DoesNotExist:
         return HttpResponse('404')
 
     context = {
             'seminar': seminar,
-            'lector': lector,
+            'lectors': lectors,
         }
     return render(request, 'seminar.html',context)
 

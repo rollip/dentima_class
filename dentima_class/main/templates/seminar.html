@@ -31,9 +31,8 @@
                 </div>
 
             </div>
-
                 <div class="top-enroll-button">
-                        <p>Записаться</p>
+                        <a href='/' >Записаться</a>
                 </div>
             </div>
         </div>
@@ -43,31 +42,37 @@
                 <div class="seminar-program">
                     <h2> Программа семинара </h2>
                     <div class="seminar-text">
-                        {{ seminar.description|safe }}
+                        {{ seminar.description|safe|linebreaks }}
+
+                    </div>
+
                 </div>
-
-
-
             </div>
-
 
         </div>
+
+
+
+        <div class="lectors-desc">
         {% for lector in lectors %}
         {% if lector %}
-        <div class="container" >
-            <div class="lector-top-box">
-                <h4> ЛЕКТОР: </h4>
-                <h2> {{ lector.name }} </h2>
-                <h5> {{ lector.specialization }} </h5>
-            </div>
-            <div class="lector-bottom-box">
-                <div class="text">  {{ lector.short_desc|linebreaks }} </div>
-
-            {% if lector.image %}
-                <div class="img-wrapper">
-                    <img src="{{ lector.image.url }}" >
+        <div class="container">
+            <div class="lector-box">
+                <div class="lector-text-box">
+                    <div class="lector-header">
+                        <h4> ЛЕКТОР: </h4>
+                        <h2> {{ lector.name }} </h2>
+                        <h5> {{ lector.specialization }} </h5>
+                    </div>
+                    <div class="text">  {{ lector.short_desc|linebreaks }} </div>
                 </div>
-            {% endif %}
+
+
+                {% if lector.image %}
+                    <div class="img-wrapper">
+                        <img src="{{ lector.image.url }}" >
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endif %}
@@ -76,14 +81,16 @@
 
 
 
-    </div>
+        </div>
 
 
 
-    <div class="container" style="display:flex">
+
+
+    <div class="container">
         <div class="pricing">
-            <h3> Стоимость</h3>
-            {{ seminar.pricing }}
+            <h2> Стоимость</h2>
+            {{ seminar.pricing|linebreaks }}
         </div>
 
         </div>

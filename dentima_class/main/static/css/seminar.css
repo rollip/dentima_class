@@ -1,6 +1,4 @@
-.lector-box {
-    height:300px;
-}
+
 
 .seminar-desc-box .seminar-header-wrap{
   display:flex;
@@ -63,69 +61,99 @@
 
 .org-container-top .lector {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
     text-transform: uppercase;
+
 }
 
 
-.seminar-program h2 {
+.seminar-program h2, .pricing h2 {
     text-transform:uppercase;
     font-weight: bold;
     text-align:center;
     padding-top: 60px;
-    padding-bottom: 60px;
 
 }
 
 .seminar-program h3 {
- padding-top: 20px;
+ padding-top: 60px;
  padding-bottom: 20px;
 
 }
 
-.seminar-program p{
-    margin-bottom:60px;
 
-}
-
-
-.lector-top-box {
+.lector-box {
+    display:flex;
+    flex-direction: column;
+    min-height:300px;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-radius:25px;
+
 }
 
-.lector-top-box h2 {
+.lector-header{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
+.lector-text-box {
+    display:flex;
+    flex-direction:column;
+    margin: 10px;
+}
+
+.lector-text-box h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
 
 
-.lector-top-box h2, h4, h5{
-    --margin-bottom: 10px;
-}
 
-.lector-bottom-box .text {
+.lector-box .text {
     display: flex;
-    flex-direction:column;
-    width: 50%;
+    flex-direction:column;f
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
-.lector-bottom-box p{
+.lector-box p{
     font-size: 18px;
 
-
 }
 
-.lector-bottom-box .img-wrapper {
-display:flex;
-    width: 50%;
-    justify-content: center;
-}
-
-.lector-bottom-box{
+.lector-box .img-wrapper {
+    flex: 2 0 0;
     display:flex;
-    justify-items: space-between;
+    justify-content: center;
+
+
+}
+
+.lector-box img {
+    background:white;
+    border-radius: 15px;
+}
+
+.lector-box {
+    color:white;
+    display:flex;
     flex-direction: row;
+    background: #474d57;
+    padding:20px;
+    box-shadow: 0px 0px 4px 3px rgba(202, 203, 222, 0.5);
+    margin-top:80px;
+   }
+
+.lectors-desc .container:nth-child(2) .lector-box {
+    background: #FED2BA;
+    color:  #582147;
+
+}
+
+{
+    background: black;
 }
 
 
@@ -139,11 +167,16 @@ display:flex;
 
 
 .pricing {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    display:flex;
+    flex-direction: column;
+
 
 }
 
+.pricing h3{
+    margin-bottom:20px;
+
+}
 
 .top-enroll-button {
     display:none;
@@ -162,12 +195,15 @@ display:flex;
 }
 .enroll form{
     width:50%;
+    margin-top:40px;
+    margin-bottom:40px;
+
 }
 
 .enroll h3{
-    margin-top:20px;
-    margin-bottom:20px;
-    font-weight: ;
+    --font-weight:bold;
+    margin-bottom:40px;
+
 }
 
 
@@ -212,7 +248,6 @@ input[type="text"] {
 
 
 
-
 input[type=submit] {
     height: calc(3.25rem + 2px);
     font-family: inherit; /* 1 */
@@ -245,10 +280,12 @@ input[type=submit] {
 
 .lector-box{
     height:auto;
+    padding: 10px;
 }
 
 .seminar-header-wrap {
   min-height: calc(100% - 50px);
+  overflow:hidden;
  }
 
 .seminar-header-wrap .title{
@@ -270,10 +307,9 @@ input[type=submit] {
 .seminar-header-wrap .title h2{
     display:table-cell;
     vertical-align:middle;
-    font-size: 34px;
+    font-size: 30px;
+
 }
-
-
 
 
 .seminar-desc-box .seminar-header-wrap{
@@ -316,21 +352,25 @@ input[type=submit] {
     margin-bottom:20px;
 }
 
-.lector-bottom-box {
+.lector-box {
     flex-direction: column-reverse;
-    margin-bottom:60px;
 
 }
-
-.lector-bottom-box .text{
-    width: auto;
+.lectors-desc .container {
+    margin:0;
+    padding:0;
+}
+.img-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:100%;
 }
 
-.lector-bottom-box .img-wrapper{
-     width: auto;
-     margin-top: 60px;
-     margin-bottom: 60px;
+.img-wrapper img{
+    width:100%;
 }
+
+
 
 .enroll form{
     width:100%;

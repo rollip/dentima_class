@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.2;
   height: 100%;
 }
@@ -38,12 +38,13 @@ a:visited {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  margin-top:10px;
-  margin-bottom:10px;
   padding: 0 15px;
   padding: 0 15px;
 }
 
+.inner-container{
+  padding:50px;
+}
 
 
 .main {
@@ -149,8 +150,25 @@ font-size: 18px;
     color: black;
 }
 
+
+.contact-box {
+    display: flex;
+}
+
+.contact-box a{
+    margin-top:auto;
+    margin-bottom:auto;
+    font-size: 24px;
+}
+
+
 @media (max-width: 1000px) {
 
+.inner-container{
+    padding:0;
+    padding-left: 10px;
+    padding-right: 10px
+}
 
 .main {
   margin-top:50px;
@@ -239,17 +257,15 @@ font-size: 18px;
     font-weight: normal;
     color: black;
   }
-
+  .popup .menu .custom-button:before {
+        content: "  WhatsApp";
+  }
   .popup .menu > li:first-child {
     padding-top: 20px;
   }
 
   .popup .menu li:last-child a{
-    background: green;
-    color:white;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 10px;
+    color:black;
   }
 
   .popup .menu > li > a:hover {

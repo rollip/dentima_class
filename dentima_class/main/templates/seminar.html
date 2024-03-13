@@ -9,11 +9,15 @@
 
 {% block content %}
     <div class="seminar-desc-box">
-        <div class="seminar-header-wrap" style="background-image: url({{ seminar.background_image.url }});">
+        <div class="seminar-header-wrap">
+
             <div class="container">
-                <div class="title">
-                    <h2>{{ seminar.name }}</h2>
+                <div class="img-wrapper">
+                    <img src="{{ seminar.background_image.url }}">
                 </div>
+            <div class="text">
+                <div class="title"> <h3>{{ seminar.name }}</h3> </div>
+
             <div class="org-container-top">
                 <div class="org-box">
                     <h3 class="date"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
@@ -24,6 +28,7 @@
                     <p>лектор:</p>
                     <h3 class="lector">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
                 </div>
+
                 <div class="org-box">
                     <p class="type">{{ seminar.type }}</p>
                     <p>{{ seminar.food }}</p>
@@ -32,9 +37,10 @@
 
             </div>
                 <div class="top-enroll-button">
-                        <a href='/' >Записаться</a>
+                        <a href='#submit' >Записаться</a>
                 </div>
             </div>
+                </div>
         </div>
 
 
@@ -90,33 +96,63 @@
     <div class="container">
         <div class="pricing">
             <h2> Стоимость</h2>
-            {{ seminar.pricing|linebreaks }}
-        </div>
+            <div class="text">
+                {{ seminar.pricing|linebreaks }}
+            </div>
 
+        </div>
         </div>
 
 <div class="container">
- <div class="enroll">
 
-    <form  action=''  method='post' class="form-example" onsubmit="process_form(event)">
-        <h3> Оставьте заявку: </h3>
-        {% csrf_token %}
-        <div class="text-field">
-            <input class='text-field__input' type="name" name="name" id="name" required placeholder="Имя"/>
-        </div>
-        <div class="text-field">
-            <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
-        </div>
-        <div class="text-field">
-            <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
-        </div>
-        <div id='form-success' class="text-field-success">Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
-        <div class="form">
-            <input id="submit" type="submit" value="Записаться!" />
+    <div class="con-and-enroll">
+        <div class="contacts">
+           <h3 style="margin-bottom:auto;"> Контакты </h3>
+            <p>Крым: </p>
+            <p>+7 (988) 888-88-88 </p>
+            <p>Краснодар: </p>
+            <p>+7 (988) 888-88-88 </p>
+            <p>Мессенджеры: </p>
+            <div style="display:flex;">
+                <a class='custom-button' style="background: #229ED9;" href='https://t.me/dentima_class'>  <i class='fa-brands fa-telegram fa-lg'></i> </a>
+                <a class='custom-button' style="background:#43d854;" href="https://wa.me/79882434040">   <i class='fa-brands fa-whatsapp fa-lg'></i> </a>
+                <a class='custom-button' style="background:#7360F2;">   <i class='fa-brands fa-viber fa-lg'></i> </a>
+            </div>
         </div>
 
-     </form>
-</div>
+
+
+         <div class="enroll">
+
+            <form  action=''  method='post' class="form-example" onsubmit="process_form(event)">
+                <h3> Оставьте заявку: </h3>
+                {% csrf_token %}
+                <div class="text-field">
+                    <input class='text-field__input' type="name" name="name" id="name" required placeholder="Имя"/>
+                </div>
+                <div class="text-field">
+                    <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
+                </div>
+                <div class="text-field">
+                    <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
+                </div>
+                <div id='form-success' class="text-field-success">Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
+                <div class="form">
+                    <input id="submit" type="submit" value="Записаться!" />
+                </div>
+
+             </form>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
 
 
 

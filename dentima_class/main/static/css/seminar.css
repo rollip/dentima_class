@@ -1,3 +1,4 @@
+
 .seminar-desc-box .seminar-header-wrap{
   display:flex;
   font-weight: normal;
@@ -164,8 +165,8 @@
 
 
 .con-and-enroll h3{
-text-align:center;
-font-weight: bold;
+    font-weight: bold;
+    text-align:left;
 }
 
 .con-and-enroll {
@@ -228,6 +229,7 @@ transition: background-color 0.3s ease;
     align-items:center;
     text-align:center;
     padding:50px;
+
 }
 .enroll form{
     width:100%;
@@ -351,9 +353,6 @@ h3 {
     color:white;
     display:flex;
     flex-direction: column;
-    margin:0;
-    padding:0;
-
 }
 
 .seminar-header-wrap .img-wrapper {
@@ -392,6 +391,7 @@ h3 {
 
 
 
+
 .top-enroll-button{
     display:flex;
     font-size: 20px;
@@ -408,11 +408,10 @@ h3 {
     flex-direction: column-reverse;
 
 }
-.lectors-desc .container {
-    margin:0;
-    padding:0;
-}
 
+.seminar-text, .pricing p{
+    padding:0 15px;
+}
 
 .lector-box  .img-wrapper {
     margin-top: 20px;

@@ -1,42 +1,19 @@
-
-.seminar-desc-box .seminar-header-wrap{
-  display:flex;
-  font-weight: normal;
-  background: white;
-  height: 600px;
-}
-
-.seminar-header-wrap h2, .seminar-header-wrap h3 {
-    font-weight:bold;
-}
-
-.seminar-header-wrap .container {
-    display:flex;
-    flex-direction: row;
-   }
-
-.seminar-header-wrap .img-wrapper {
-    width: 50%;
-    background:  #e2e6f3;
-    overflow:hidden;
-
-
-
-}
-
-.seminar-header-wrap .img-wrapper img{
+.seminar-desc-box .text{
     height:100%;
 }
 
-
-.seminar-header-wrap .text{
-    width:50%;
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    color:white;
-    background:  #2F375C;
+.double-box-text-image {
+    h2, h3 {
+        font-weight: bold;
+    }
 }
+
+
+.double-box-text-image .container-sc {
+    display:flex;
+   }
+
+
 
 .org-box{
     margin-top:20px;
@@ -136,7 +113,7 @@
     padding:50px;
    }
 
-.lectors-desc .container:nth-child(2) .lector-box {
+.lectors-desc .container-sc:nth-child(2) .lector-box {
     background: #F3EACF;
     color:  black;
 
@@ -150,6 +127,7 @@
     display:flex;
     flex-direction: column;
     padding:50px;
+    width:100%;
 
 
 }
@@ -171,6 +149,7 @@
 
 .con-and-enroll {
     display:flex;
+    width:100%;
     flex-direction:row;
     text-align:left;
     margin-bottom: 20px;
@@ -329,9 +308,7 @@ h3 {
     font-size: 24px;
 }
 
-.seminar-desc-box .seminar-header-wrap {
-      height: calc(100vh - 50px);
-}
+
 
 
 
@@ -349,29 +326,6 @@ h3 {
     width:auto;
 }
 
-.seminar-header-wrap .container {
-    color:white;
-    display:flex;
-    flex-direction: column;
-}
-
-.seminar-header-wrap .img-wrapper {
-    width:100%;
-    margin:0;
-    padding:0;
-   }
-
-.seminar-header-wrap .img-wrapper img{
-    width:100%;
-  }
-
-
-.seminar-header-wrap .text{
-    width:100%;
-    padding:0;
-    padding-left:10px;
-    padding-right:10px;
-  }
 
 
 .title{
@@ -423,8 +377,9 @@ h3 {
     width:100%;
 }
 
-.pricing{
+.pricing {
     padding:0px;
+
 }
 
 .enroll form{

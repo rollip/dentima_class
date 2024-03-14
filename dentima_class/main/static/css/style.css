@@ -11,7 +11,10 @@ html {
   box-sizing: inherit;
 }
 
+
+
 body {
+
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
@@ -41,8 +44,48 @@ a:visited {
   padding: 0 15px;
 }
 
+.container-sc{
+  display:flex;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
 .inner-container{
   padding:50px;
+}
+
+
+.double-box-text-image{
+  display:flex;
+  font-weight: normal;
+  background: white;
+  height: 600px;
+  width:100%;
+  background: #e2e6f3;
+
+  .image{
+    width: 50%;
+    display:flex;
+    overflow: hidden;
+
+    img {
+        height:100%;
+    }
+  }
+  .text {
+    width:50%;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    color:white;
+
+
+  }
+
 }
 
 
@@ -162,11 +205,6 @@ font-size: 18px;
 
 
 @media (max-width: 1000px) {
-.navbar .container{
-    padding: 0 10px;
-
-
-}
 .inner-container{
     padding:0;
     padding-left: 10px;
@@ -179,8 +217,31 @@ font-size: 18px;
 
 .container {
     margin:0;
-    padding: 0 0px;
+    padding: 0 10px;
 }
+
+
+.double-box-text-image {
+    display:flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+
+    .image {
+        width:100%;
+        img { width:100%; }
+
+        }
+
+    .text {
+    width:100%;
+    padding: 40px 10px;
+
+
+}
+
+}
+
+
 
 
 .navbar {

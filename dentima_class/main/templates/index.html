@@ -10,9 +10,34 @@
 
 {% block content %}
 
-  {% include 'includes/banner.html' %}
+
+
+
+<div class="container-sc">
+  <div class="double-box-text-image">
+      <div class="image">
+          <img src="{% static 'img/index_double.jpg' %}">
+      </div>
+      <div class="text"> <h2>Dentima Class</h2>
+          <p>Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических занятий и мастер-классов для стоматологов и зубных техников.</p>
+         <!-- <div style="display:flex; align-items:center;"> <h4>успешных семинаров</h4></div>
+          <div style="display:flex; align-items:center;"><h2>>300&#160</h2> <h4> участников</h4></div> -->
+          <div style="display:flex; justify-content: space-between;">
+              <div style="display:flex;flex-direction:column; width:50%; margin-right: 10px;"> <h2> <div class="counter" id="counter_seminars">> </div> </h2> <h4>успешных<br> семинаров</h4> </div>
+              <div style="display:flex;flex-direction:column; width:50%; "> <h2> <div class="counter" id="counter_students"> > </div> </h2> <h4> довольных <br> учеников</h4> </div>
+          </div>
+          <div> </div>
+      </div>
+  </div>
+</div>
+
+
+
   {% include 'includes/all_seminars.html' %}
-  {% include 'includes/swiper.html' %}
+
+
+
+
   {% include 'includes/marque.html' %}
 
 {% endblock %}
@@ -21,11 +46,14 @@
 {% block scripts %}
 
   	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/swiper2.js' %}" ></script>
     <script src="{% static 'js/swiper.js' %}" ></script>
-
+    <script src="{% static 'js/index_counters.js' %}" ></script>
 {% endblock %}
 
 
 
 
+{% include 'includes/banner.html' %}
+  {% include 'includes/swiper.html' %}
 

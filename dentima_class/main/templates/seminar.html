@@ -3,16 +3,16 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/seminar.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
     <script src="{% static 'js/form_processing.js' %} "> </script>
 {% endblock %}
 
 
 {% block content %}
     <div class="seminar-desc-box">
-        <div class="seminar-header-wrap">
-
-            <div class="container">
-                <div class="img-wrapper">
+        <div class="container-sc">
+        <div class="double-box-text-image">
+                <div class="image">
                     <img src="{{ seminar.background_image.url }}">
                 </div>
             <div class="text">
@@ -44,7 +44,7 @@
         </div>
 
 
-            <div class="container">
+            <div class="container-sc">
                 <div class="seminar-program">
                     <h2> Программа семинара </h2>
                     <div class="seminar-text">
@@ -62,7 +62,7 @@
         <div class="lectors-desc">
         {% for lector in lectors %}
         {% if lector %}
-        <div class="container">
+        <div class="container-sc">
             <div class="lector-box">
                 <div class="lector-text-box">
                     <div class="lector-header">
@@ -93,7 +93,7 @@
 
 
 
-    <div class="container">
+    <div class="container-sc">
         <div class="pricing">
             <h2> Стоимость</h2>
             <div class="text">
@@ -103,8 +103,7 @@
         </div>
         </div>
 
-<div class="container">
-
+<div class="container-sc">
     <div class="con-and-enroll">
         <div class="contacts">
            <h3 style="margin-bottom:auto;"> Контакты </h3>

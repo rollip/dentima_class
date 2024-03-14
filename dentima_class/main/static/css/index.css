@@ -1,6 +1,83 @@
 h2 {
-    text-align:center;
+    text-align:start;
+    font-weight: bold;
     margin-top:15px;
     margin-bottom:15px;
 }
 
+.double-box-text-image {
+    height: 500px;
+
+    .image {
+
+        img{
+            height:100%;
+        }
+    }
+
+    .text {
+
+        background:#e2e6f3;
+        color:black;
+    }
+    h1 {
+
+
+    }
+    h2 {
+        font-size:60px;
+        text-align:left;
+        font-weight: bold;
+
+    }
+    h3 {
+        text-align:left;
+        text-transform: uppercase;
+        font-weight:bold;
+
+
+    }
+}
+
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter {
+  transition: --num 5s;
+  counter-set: num var(--num);
+}
+.counter::after {
+  content: counter(num);
+
+}
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+.double-box-text-image{
+    height: auto;
+
+    h2 {
+        font-size:48px;
+    }
+
+    .text {
+        margin-bottom: 40px;
+    }
+
+
+
+    }
+
+
+
+
+}

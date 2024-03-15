@@ -35,10 +35,10 @@
 
 
 .lector-box .img-wrapper {
-    flex: 2 0 0;
     display:flex;
     justify-content: center;
     width:50%;
+    overflow:hidden;
 }
 
 .lector-box img {

@@ -58,3 +58,7 @@ def seminar(request, seminar_slug=None):
 def mail(request):
     send_email(request)
     return HttpResponse('200')
+
+
+def in_dev(request):
+    return render(request, 'in_dev.html')

@@ -13,8 +13,8 @@
 .lector-blob {
     display: flex;
     flex-direction: column;
-    font-size: 12px;
-    width: 300px;
+    font-size: 14px;
+    width: 230px;
     border-radius: 10px;
     margin:10px;
     background: white;
@@ -23,10 +23,11 @@
 
     .name {
 
+
     }
 
     .image-wrap {
-        height: 250px;
+        height: 200px;
         overflow:hidden;
 
 
@@ -44,50 +45,31 @@
 .lector-blob .body {
     display: flex;
     flex-direction:column;
-    height: 50px;
+    height: 70px;
     padding:20px 10px ;
 
     .name {
         font-weight: bold;
     }
 
-    .lector-wrap {
-        display:flex;
-        margin-bottom:10px;
-
-        .image-wrap {
-            display: flex;
-            overflow:hidden;
-            width: 35px;
-            height: 35px;
-            clip-path: circle();
-            background: grey;
-            justify-content:center;
-
-            img {
-                height:100%;
-            }
-        }
-
-        .lector-name {
-
-            margin-left:10px;
-            display:flex;
-            justify-content:center;
-            align-items: center;
-
-        }
-
-
-    }
-
     .blob-button {
-        border-radius:10px;
-        color:white;
-        background: #2F375C;
-        padding: 10px;
+        width:20%;
+        margin-left: auto;
+        border-radius:5px;
+        background: #DCDCDC;
+        padding: 4px;
         text-align: center;
+
     }
+    .specialization {
+        margin-bottom:auto;
+
+
+
+
+    }
+
+
 
 }
 

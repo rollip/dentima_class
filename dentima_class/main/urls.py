@@ -8,6 +8,8 @@ urlpatterns = [
     path('lector/<lector_slug>', views.lector),
     path('seminar/', views.seminar),
     path('seminar/<seminar_slug>', views.seminar),
+    path('about/', views.in_dev),
+    path('contact/', views.in_dev),
     path('send_email', views.mail),
 ]
 

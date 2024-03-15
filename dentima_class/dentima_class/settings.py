@@ -30,7 +30,7 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 
-ALLOWED_HOSTS = ['kegrigorev.ru']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

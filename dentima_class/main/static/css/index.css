@@ -19,6 +19,19 @@ h2 {
 
         background:#e2e6f3;
         color:black;
+
+        .counters-box {
+        display:flex;
+        justify-content:space-between;
+        color:#2F375C;
+            .counter-wrapper {
+                display:flex;
+                flex-direction:column;
+                 width:50%;
+            }
+         }
+
+
     }
     h1 {
 
@@ -37,7 +50,14 @@ h2 {
 
 
     }
+
+
+style="display:flex;flex-direction:column; width:50%; margin-right: 10px;"
+
+
 }
+
+
 
 
 @property --num {
@@ -54,10 +74,6 @@ h2 {
   content: counter(num);
 
 }
-
-
-
-
 
 
 

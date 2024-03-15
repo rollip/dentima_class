@@ -3,7 +3,6 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/seminar.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
     <script src="{% static 'js/form_processing.js' %} "> </script>
 {% endblock %}
 
@@ -57,38 +56,7 @@
 
         </div>
 
-
-
-        <div class="lectors-desc">
-        {% for lector in lectors %}
-        {% if lector %}
-        <div class="container-sc">
-            <div class="lector-box">
-                <div class="lector-text-box">
-                    <div class="lector-header">
-                        <h4> ЛЕКТОР: </h4>
-                        <h2> {{ lector.name }} </h2>
-                        <h5> {{ lector.specialization }} </h5>
-                    </div>
-                    <div class="text">  {{ lector.short_desc|linebreaks }} </div>
-                </div>
-
-
-                {% if lector.image %}
-                    <div class="img-wrapper">
-                        <img src="{{ lector.image.url }}" >
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-
-
-
-        </div>
-
+        {% include 'includes/lector_banner.html' %}
 
 
 
@@ -106,7 +74,7 @@
 <div class="container-sc">
     <div class="con-and-enroll">
         <div class="contacts">
-           <h3 style="margin-bottom:auto;"> Контакты </h3>
+           <h3> Контакты </h3>
             <p>Крым: </p>
             <p>+7 (988) 888-88-88 </p>
             <p>Краснодар: </p>

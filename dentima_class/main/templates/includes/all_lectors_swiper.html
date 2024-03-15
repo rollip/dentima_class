@@ -1,0 +1,33 @@
+{% load static %}
+<!-- Banner -->
+<link rel="stylesheet" href="{% static 'css/includes/all_lectors_swiper.css' %}" />
+<link rel="stylesheet" href="{% static 'css/includes/swiper-bundle.min.css' %} "/>
+<!-- Main page banner -->
+    <div class="seminars-container-wrap">
+        <div class="container">
+            <h2>Лекторы</h2>
+            <div class="swiper allLectorsSwiper" >
+                <div class="swiper-wrapper">
+          <!-- Additional required wrapper -->
+                    {% for lector in lectors%}
+                        <div class="swiper-slide">
+                            <div class="lector-blob">
+                                <div class="image-wrap"> <img src="{{ lector.image.url }}"> </div>
+                                <div class=body>
+                                    <div class="name"> {{ lector.name }} </div>
+                                    <div class="specialization"> {{ lector.specialization }} </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+
+                    <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+
+  	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/all_lectors_swiper.js' %}" ></script>

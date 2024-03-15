@@ -6,6 +6,7 @@ from dentima_class import settings
 urlpatterns = [
     path('', views.index),
     path('lector/<lector_slug>', views.lector),
+    path('seminar/', views.seminar),
     path('seminar/<seminar_slug>', views.seminar),
     path('send_email', views.mail),
 ]

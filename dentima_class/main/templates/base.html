@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href=" {% static 'css/reset.css' %} " />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
 
+    {% block css %}{% endblock %}
 
-    {% block css %} {% endblock %}
     <title>Dentima Class </title>
   </head>
 
@@ -22,12 +23,12 @@
           <a href="/" class="logo" id="logo">Dentima Class</a>
           <ul class="menu" id="menu">
             <li><a href="/">Главная</a></li>
-            <li><a href="#">Benefits</a></li>
+            <li><a href="/seminar">Семинары</a></li>
             <li><a href="#">О нас</a></li>
             <li><a href="#">Контакты</a></li>
             <li><a href="tel:+79882434040">+7 (988) 243-40-40</a></li>
             <li>
-                <a class='custom-button' href="https://wa.me/79882434040">  <i class='fa-brands fa-whatsapp fa-lg'> </i> </a>
+                <a class='custom-button' href="https://wa.me/79882434040" > <i class='fa-brands fa-whatsapp fa-lg'></i> </a>
             </li>
 
           </ul>

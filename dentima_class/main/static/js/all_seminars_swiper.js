@@ -7,7 +7,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 }
 
 
-const swiper2 = new Swiper('.swiper2', {
+const allSeminarsSwiper = new Swiper('.allSeminarsSwiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,

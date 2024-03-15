@@ -1,0 +1,50 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<!-- Banner -->
+<link rel="stylesheet" href="{% static 'css/includes/all_seminars_swiper.css' %}" />
+<link rel="stylesheet" href="{% static 'css/all_seminars_page.css' %}" />
+<link rel="stylesheet" href="{% static 'css/includes/swiper-bundle.min.css' %} "/>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- Main page banner -->
+
+        <div class="container">
+            <h2>Все семинары</h2>
+            <div class="seminars-container-wrap">
+          <!-- Additional required wrapper -->
+                    {% for seminar in seminars %}
+                            <div class="seminar-blob">
+                                <div class="seminar-image-wrap"> <img src="{{ seminar.background_image.url }}"> </div>
+                                <div class=blob-body>
+                                    <div class="seminar-name"> {{ seminar.name }} </div>
+                                        <div class="lector-wrap">
+                                            <div class="image-wrap"> <img src="{{ seminar.lector.image.url }}"> </div>
+                                            <div class="lector-name">{{ seminar.lector.name }}</div>
+                                        </div>
+                                        {% if seminar.lector_2 %}
+                                        <div class="lector-wrap">
+                                            <div class="image-wrap"> <img src="{{ seminar.lector_2.image.url }}"> </div>
+                                            <div class="lector-name">{{ seminar.lector_2.name }}</div>
+                                        </div>
+                                        {% endif %}
+                                    <a class="blob-button" href="/seminar/{{ seminar.slug }}"> Подробнее </a>
+
+                                </div>
+                            </div>
+
+                    {% endfor %}
+            </div>
+
+        </div>
+
+{% endblock %}

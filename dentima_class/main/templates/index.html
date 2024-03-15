@@ -20,11 +20,9 @@
       </div>
       <div class="text"> <h2>Dentima Class</h2>
           <p>Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических занятий и мастер-классов для стоматологов и зубных техников.</p>
-         <!-- <div style="display:flex; align-items:center;"> <h4>успешных семинаров</h4></div>
-          <div style="display:flex; align-items:center;"><h2>>300&#160</h2> <h4> участников</h4></div> -->
-          <div style="display:flex; justify-content: space-between;">
-              <div style="display:flex;flex-direction:column; width:50%; margin-right: 10px;"> <h2> <div class="counter" id="counter_seminars">> </div> </h2> <h4>успешных<br> семинаров</h4> </div>
-              <div style="display:flex;flex-direction:column; width:50%; "> <h2> <div class="counter" id="counter_students"> > </div> </h2> <h4> довольных <br> учеников</h4> </div>
+          <div class='counters-box'>
+              <div  class="counter-wrapper"> <h2> <div class="counter" id="counter_seminars"> > </div> </h2> <h4>успешных<br> семинаров</h4> </div>
+              <div class="counter-wrapper"> <h2> <div class="counter" id="counter_students" > > </div> </h2> <h4> довольных <br> учеников</h4> </div>
           </div>
           <div> </div>
       </div>
@@ -33,8 +31,8 @@
 
 
 
-  {% include 'includes/all_seminars.html' %}
-
+  {% include 'includes/all_seminars_swiper.html' %}
+  {% include 'includes/all_lectors_swiper.html' %}
 
 
 
@@ -55,5 +53,5 @@
 
 
 {% include 'includes/banner.html' %}
-  {% include 'includes/swiper.html' %}
+{% include 'includes/swiper.html' %}
 

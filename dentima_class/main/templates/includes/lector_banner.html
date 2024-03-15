@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/includes/lector_banner.css' %}" />
+<div class="lectors-desc">
+        {% for lector in lectors %}
+        {% if lector %}
+        <div class="container-sc">
+            <div class="lector-box">
+                <div class="lector-text-box">
+                    <div class="lector-header">
+                        <h4> ЛЕКТОР: </h4>
+                        <h2> {{ lector.name }} </h2>
+                        <h5> {{ lector.specialization }} </h5>
+                    </div>
+                    <div class="text">  {{ lector.short_desc|linebreaks }} </div>
+                </div>
+
+
+                {% if lector.image %}
+                    <div class="img-wrapper">
+                        <img src="{{ lector.image.url }}" >
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>

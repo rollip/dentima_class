@@ -1,12 +1,12 @@
 {% load static %}
 <!-- Banner -->
-<link rel="stylesheet" href="{% static 'css/includes/all_seminars.css' %}" />
+<link rel="stylesheet" href="{% static 'css/includes/all_seminars_swiper.css' %}" />
 <link rel="stylesheet" href="{% static 'css/includes/swiper-bundle.min.css' %} "/>
 <!-- Main page banner -->
     <div class="seminars-container-wrap">
         <div class="container">
             <h2>Все семинары</h2>
-            <div class="swiper swiper2" >
+            <div class="swiper allSeminarsSwiper" >
                 <div class="swiper-wrapper">
           <!-- Additional required wrapper -->
                     {% for seminar in seminars %}
@@ -25,7 +25,7 @@
                                             <div class="lector-name">{{ seminar.lector_2.name }}</div>
                                         </div>
                                         {% endif %}
-                                    <div class="blob-button"> Подробнее </div>
+                                    <a class="blob-button" href="/seminar/{{ seminar.slug }}"> Подробнее </a>
 
                                 </div>
                             </div>
@@ -39,3 +39,6 @@
             </div>
         </div>
     </div>
+
+  	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/all_seminars_swiper.js' %}" ></script>

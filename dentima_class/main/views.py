@@ -7,19 +7,21 @@ from .models import Lector,Seminar
 #     lectors = Lector.objects.all() 'lectors' : lectors,
 def index(request):
     seminars = Seminar.objects.all()
+    lectors = Lector.objects.all()
     context = {
         'seminars' : seminars,
+        'lectors': lectors,
     }
     return render(request,'index.html', context)
 
 def lector(request, lector_slug):
     try:
-        lector = Lector.objects.get(slug = lector_slug)
+        lectors = [Lector.objects.get(slug = lector_slug)]
     except Lector.DoesNotExist:
         return HttpResponse('404')
 
     context = {
-        'lector' : lector,
+        'lectors' : lectors,
     }
 
     return render(request, 'lector.html', context)
@@ -27,20 +29,28 @@ def lector(request, lector_slug):
 
 
 
-def seminar(request,seminar_slug):
+def seminar(request, seminar_slug=None):
 
-    try:
-        seminar = Seminar.objects.get(slug=seminar_slug)
-        lectors = (seminar.lector, seminar.lector_2)
-
-    except Seminar.DoesNotExist:
-        return HttpResponse('404')
-
-    context = {
-            'seminar': seminar,
-            'lectors': lectors,
+    if seminar_slug is None:
+        seminars = Seminar.objects.all()
+        context = {
+            'seminars': seminars,
         }
-    return render(request, 'seminar.html',context)
+        return render(request, 'all_seminars_page.html',context)
+
+
+    else:
+        try:
+            seminar = Seminar.objects.get(slug=seminar_slug)
+            lectors = (seminar.lector, seminar.lector_2)
+        except Seminar.DoesNotExist:
+            return HttpResponse('404')
+
+        context = {
+                'seminar': seminar,
+                'lectors': lectors,
+            }
+        return render(request, 'seminar.html',context)
 
 
 

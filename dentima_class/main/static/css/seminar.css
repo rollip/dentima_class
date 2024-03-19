@@ -258,6 +258,11 @@ input[type=submit] {
 .con-and-enroll {
     flex-direction: column;
 }
+
+.con-and-enroll .contacts {
+    color:white;
+}
+
 .con-and-enroll .contacts p {
     font-size:18px;
 }

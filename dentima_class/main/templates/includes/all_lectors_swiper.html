@@ -5,14 +5,14 @@
 <!-- Main page banner -->
     <div class="seminars-container-wrap">
         <div class="container">
-            <h2>Лекторы</h2>
+            <p class="h1 mb-3">Лекторы </p>
             <div class="swiper allLectorsSwiper" >
                 <div class="swiper-wrapper">
           <!-- Additional required wrapper -->
                     {% for lector in lectors%}
                         <div class="swiper-slide">
                             <div class="lector-blob">
-                                <div class="image-wrap"> <img src="{{ lector.image.url }}"> </div>
+                                <div class="image-wrap"> <img src="{{ lector.image.url }}" class="img-fluid"> </div>
                                 <div class=body>
                                     <div class="name"> {{ lector.name }} </div>
                                     <div class="specialization"> {{ lector.specialization }} </div>

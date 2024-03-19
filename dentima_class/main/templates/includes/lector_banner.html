@@ -3,25 +3,37 @@
 <div class="lectors-desc">
         {% for lector in lectors %}
         {% if lector %}
-        <div class="container-sc">
-            <div class="lector-box">
-                <div class="lector-text-box">
-                    <div class="lector-header">
-                        <h4> ЛЕКТОР: </h4>
-                        <h2> {{ lector.name }} </h2>
-                        <h5> {{ lector.specialization }} </h5>
+        
+        
+        <div class="container col-lg-12">
+          <div class="row">
+              <div class="lector-box">
+              <div class='col-md-4 p-0'> 
+                        {% if lector.image %}
+                            <div class="h-100 d-flex justify-content-center">
+                                <img src="{{ lector.image.url }}" >
+                            </div>
+                        {% endif %}
+              </div>
+              
+              <div class='col-md-8 p-0'> 
+                 
+                        <div class="lector-text-box">
+                            <div class="lector-header">
+                                <h4> ЛЕКТОР: </h4>
+                                <h2> {{ lector.name }} </h2>
+                                <h5> {{ lector.specialization }} </h5>
+                            </div>
+                            <div class="text">  {{ lector.short_desc|linebreaks }} </div>
+                        </div>
+        
                     </div>
-                    <div class="text">  {{ lector.short_desc|linebreaks }} </div>
                 </div>
-
-
-                {% if lector.image %}
-                    <div class="img-wrapper">
-                        <img src="{{ lector.image.url }}" >
-                    </div>
                 {% endif %}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
+                {% endfor %}
+              </div>
+              </div>
+            
+        
+          </div>
         </div>

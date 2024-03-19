@@ -12,6 +12,9 @@ html {
 }
 
 
+
+
+
 body {
 
   display: flex;
@@ -63,34 +66,30 @@ a:visited {
 }
 
 
-.double-box-text-image{
+.double-box-text-image {
   display:flex;
+  flex: 0 0 auto;
   font-weight: normal;
   background: white;
   height: 600px;
   width:100%;
-  background: #e2e6f3;
-
-  .image{
+  background: #e2e6f3;}
+ 
+  
+.double-box-text-image .image{
+    height:100%;
     width: 50%;
-    display:flex;
-    overflow: hidden;
+    display:flex; }
+      
 
-    img {
+.double-box-text-image .image img {
         height:100%;
+        object-fit: contain;
+
     }
-  }
-  .text {
-    width:50%;
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    color:white;
+  
+  
 
-
-  }
-
-}
 
 
 .main {
@@ -99,27 +98,6 @@ a:visited {
   margin-top: 75px;
 }
 
-h1 {
-    font-size:48px;
-}
-
-h2 {
-    font-size:36px;
-}
-
-h3 {
-    font-size:30px;
-}
-
-h4 {
-    font-size:24px;
-}
-
-p {
-
-font-size: 18px;
-
-}
 
 .footer {
   background-color: #212429;
@@ -226,24 +204,21 @@ font-size: 18px;
 
 
 .double-box-text-image {
-    display:flex;
     flex-direction: column;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 50px);}
 
-    .image {
-        width:100%;
-        img { width:100%; }
+.double-box-text-image .image {
+            display:flex;
+            flex-direction: column;
+            width:100vw;
+            height:auto; 
+            overflow:hidden;}
+                                
+.double-box-text-image .image img { justify-self: flex-start; }
 
-        }
-
-    .text {
-    width:100%;
-    padding: 40px 10px;
+        
 
 
-}
-
-}
 
 
 

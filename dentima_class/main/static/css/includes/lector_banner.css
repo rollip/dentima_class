@@ -34,12 +34,6 @@
 }
 
 
-.lector-box .img-wrapper {
-    display:flex;
-    justify-content: center;
-    width:50%;
-    overflow:hidden;
-}
 
 .lector-box img {
     background:white;
@@ -73,11 +67,6 @@
 
 .lector-text-box {
     width:auto;
-}
-
-.lector-box {
-    flex-direction: column-reverse;
-
 }
 
 .lector-box  .img-wrapper {

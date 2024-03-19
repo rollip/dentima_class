@@ -8,13 +8,17 @@
 
 
 {% block content %}
-    <div class="seminar-desc-box">
-        <div class="container-sc">
-        <div class="double-box-text-image">
-                <div class="image">
-                    <img src="{{ seminar.background_image.url }}">
-                </div>
-            <div class="text">
+    <div class="container col-md-12" style='max-height:600px;overflow:hidden;'>
+  <div class="row">
+      <div class='col-md-6 p-0'> 
+        <img  src="{{ seminar.background_image.url }}" class="img-fluid">
+      </div>
+      
+      
+      
+      
+      <div class='col-md-6 '> 
+            <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'> 
                 <div class="title"> <h3>{{ seminar.name }}</h3> </div>
 
             <div class="org-container-top">
@@ -40,8 +44,10 @@
                 </div>
             </div>
                 </div>
+        </div>   
+              
+          </div>
         </div>
-
 
             <div class="container-sc">
                 <div class="seminar-program">
@@ -54,7 +60,8 @@
                 </div>
             </div>
 
-        </div>
+
+
 
         {% include 'includes/lector_banner.html' %}
 

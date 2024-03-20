@@ -4,6 +4,37 @@
 
 }
 
+.sem-img-wrap {
+    height:15rem;
+}
+
+.sem-img-wrap img{
+    
+    width:100%;
+}
+
+@media (min-width: 768px) { 
+    .sem-img-wrap {
+        height:30rem;
+     
+    }
+    .sem-img-wrap img {
+        height:100%;
+    }
+    
+}
+
+.seminar-org {
+     style= height:100%
+}
+
+@media (min-width: 768px) {
+    .seminar-org{ 
+        height:30rem;
+        }
+    }
+
+
 .top-enroll-button{
     display:flex;
     font-size: 20px;

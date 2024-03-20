@@ -10,15 +10,15 @@
 {% block content %}
     <div class="container col-md-12">
         <div class="row">
-            <div class='col-md-6 p-0'>
-                <div class="img-wrap h-100" style='max-height:500px;overflow:hidden;'>
-                    <img class="img-fluid h-100" src="{{ seminar.background_image.url }}">
+            <div class='col-md-6 p-0 overflow-hidden'>
+                <div class="sem-img-wrap">
+                    <img class="h-100" src="{{ seminar.background_image.url }}">
                 </div>
             </div>
 
 
-                <div class='col-md-6 p-0'>
-                    <div class="seminar-org h-100">
+                <div class='col-md-6 p-0' >
+                    <div class="seminar-org">
                     <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'>
                             <p class="h5 mb-3"> {{ seminar.name }} </p>
                             <p class="h3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>

@@ -17,8 +17,6 @@ function process_form(e)
 }
     const csrftoken = getCookie('csrftoken');
 
-
-
     e.preventDefault();
     const url = "/send_email";
     fetch(url, {

@@ -73,6 +73,21 @@
 
 }
 
+.btn-mystyle-lector {
+    border-radius: 10px;
+    color:black;
+    background: #dbd7d2;
+    padding: 0 10px;
+    text-align: center;
+    margin-left:auto;
+    border:none;
+}
+
+.btn-mystyle-lector:hover {
+    background:#2F375C
+
+}
+
 
 
 

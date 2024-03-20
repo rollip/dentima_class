@@ -19,22 +19,22 @@
 <!-- Main page banner -->
 
         <div class="container">
-            <h2>Все семинары</h2>
+            <p class="h1 text-center fw-bold my-4">Все семинары</p>
             <div class="d-flex flex-row flex-wrap justify-content-center justify-content-md-start clearfix">
           <!-- Additional required wrapper -->
                     {% for seminar in seminars %}
-                    <div class="card m-2" style='border-radius:15px; overflow:hidden'>
+                    <div class="card card-seminars m-2" style='border-radius:15px; overflow:hidden'>
                               <img src="{{ seminar.background_image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
                               <div class="card-body" style='display:flex;flex-direction:column;'>
-                                <h6 class="card-title"> {{ seminar.name }} </h5>
+                                <p class="h6 card-title"> {{ seminar.name }} </p>
                                         <div class="lector-wrap">
                                             <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
-                                        <div class="lector-name">{{ seminar.lector.name }}</div>
+                                        <div class="lector-name my-auto ms-2">{{ seminar.lector.name }}</div>
                                         </div>
                                         {% if seminar.lector_2 %}
                                         <div class="lector-wrap">
                                             <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
-                                            <div class="lector-name">{{ seminar.lector_2.name }}</div>
+                                            <div class="lector-name my-auto ms-2">{{ seminar.lector_2.name }}</div>
                                         </div>
                                         {% endif %}
                                 <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle" > Подробнее</a>

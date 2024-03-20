@@ -1,0 +1,10 @@
+.lector-banner .container{
+    background-color: #b3d4fc;
+    color: #2F375C;
+}
+
+.lector-banner .img-wrap {
+    height: 30rem;
+    background: #2F375C;
+    border-radius:15px;
+}

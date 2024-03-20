@@ -1,39 +1,32 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/includes/lector_banner.css' %}" />
-<div class="lectors-desc">
+
+
+
+
         {% for lector in lectors %}
         {% if lector %}
-        
-        
-        <div class="container col-lg-12">
-          <div class="row">
-              <div class="lector-box">
-              <div class='col-md-4 p-0'> 
+<div class="lector-banner">
+        <div class="container col-lg-12 p-0">
+          <div class="row p-0 m-0">
+              <div class='col-md-4 p-4'>
                         {% if lector.image %}
-                            <div class="h-100 d-flex justify-content-center">
-                                <img src="{{ lector.image.url }}" >
+                            <div class="img-wrap d-flex justify-content-center overflow-hidden">
+                                <img class="" src="{{ lector.image.url }}" >
                             </div>
                         {% endif %}
               </div>
               
-              <div class='col-md-8 p-0'> 
-                 
-                        <div class="lector-text-box">
-                            <div class="lector-header">
-                                <h4> ЛЕКТОР: </h4>
-                                <h2> {{ lector.name }} </h2>
-                                <h5> {{ lector.specialization }} </h5>
-                            </div>
-                            <div class="text">  {{ lector.short_desc|linebreaks }} </div>
-                        </div>
-        
-                    </div>
-                </div>
+              <div class='col-md-8 p-0'>
+                  <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                                <p class="h4"> ЛЕКТОР: </p>
+                                <p class="h2 fw-bold"> {{ lector.name }} </p>
+                                <p class="h5"> {{ lector.specialization }} </h5>
+                                 <p  {{ lector.short_desc|linebreaks }} </p>
+                  </div>
+              </div>
                 {% endif %}
                 {% endfor %}
-              </div>
-              </div>
-            
-        
           </div>
         </div>
+ </div>

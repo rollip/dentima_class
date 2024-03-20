@@ -1,38 +1,37 @@
-.card {
+.card-seminars {
     width: 15rem;
     height: 30rem;
 
 }
 
-.card .card-title {
+.card-seminars .card-title {
     margin-bottom:auto;
     font-weight:bold;
 }
 
-.card .lector-wrap {
+.card-seminars .lector-wrap {
     margin-bottom:100px;
     display:flex; 
     flex-direction:row;
     margin-bottom:10px;
 }
 
-.card .lector-name {
-    margin-left:10px;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-}
 
-.card .lector-wrap img{
+.card-seminars .lector-wrap img{
     height:35px;
     width:35px;
 }
 
-.card .btn-mystyle {
+.btn-mystyle {
     border-radius:10px;
     color:white;
     background: #2F375C;
     padding: 10px;
-    text-align: center;'
+    text-align: center;
+    border:none;
 }
+
+
+
+
 

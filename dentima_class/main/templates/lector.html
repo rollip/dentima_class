@@ -7,6 +7,28 @@
 
 
 {% block content %}
-    {% include 'includes/lector.html' %}
+    {% include 'includes/lector_banner.html' %}
+
+    <div class="lector-about">
+        <div class="container d-flex flex-column py-5">
+            <p class='h2 fw-bold my-3'> О себе </p>
+            {{ lectors.0.long_desc|linebreaks }}
+        </div>
+
+    </div>
+
+
+
+
+
+
 {% endblock %}
+
+
+
+
+{% load static %}
+
+
+
 

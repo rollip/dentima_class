@@ -9,129 +9,101 @@
 
 {% block content %}
     <div class="container col-md-12">
-  <div class="row">
-      <div class='col-md-6 p-0'> 
-        <img  src="{{ seminar.background_image.url }}" class="img-fluid" style='max-height:500px;overflow:hidden;'>
-      </div>
-      
-      
-      
-      
-      <div class='col-md-6 '> 
-            <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'> 
-                <div class="title"> <h3>{{ seminar.name }}</h3> </div>
-
-            <div class="org-container-top">
-                <div class="org-box">
-                    <h3 class="date"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
-                    <p class="place">{{ seminar.address}}</p>
-                </div>
-
-                <div class="org-box">
-                    <p>лектор:</p>
-                    <h3 class="lector">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
-                </div>
-
-                <div class="org-box">
-                    <p class="type">{{ seminar.type }}</p>
-                    <p>{{ seminar.food }}</p>
-                    <p>сертификат</p>
-                </div>
-
-            </div>
-                <div class="top-enroll-button">
-                        <a href='#submit' >Записаться</a>
+        <div class="row">
+            <div class='col-md-6 p-0'>
+                <div class="img-wrap h-100" style='max-height:500px;overflow:hidden;'>
+                    <img class="img-fluid h-100" src="{{ seminar.background_image.url }}">
                 </div>
             </div>
-                </div>
-        </div>   
-              
-          </div>
-        </div>
 
-            <div class="container-sc">
-                <div class="seminar-program">
-                    <h2> Программа семинара </h2>
-                    <div class="seminar-text">
-                        {{ seminar.description|safe|linebreaks }}
 
+                <div class='col-md-6 p-0'>
+                    <div class="seminar-org h-100">
+                    <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'>
+                            <p class="h5 mb-3"> {{ seminar.name }} </p>
+                            <p class="h3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
+                            <p class="mb-4">{{ seminar.address}}</p>
+
+                            <p>лектор:</p>
+                            <p class="h3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
+
+                            <p>{{ seminar.type }}</p>
+                            <p>{{ seminar.food }}</p>
+                            <p>сертификат</p>
+                            <div class="top-enroll-button d-flex mt-auto">   <a href='#submit' >Записаться</a> </div>
                     </div>
 
+                    </div>
                 </div>
-            </div>
 
-
-
-
-        {% include 'includes/lector_banner.html' %}
-
-
-
+        </div>
+    </div>
 
     <div class="container-sc">
-        <div class="pricing">
-            <h2> Стоимость</h2>
-            <div class="text">
-                {{ seminar.pricing|linebreaks }}
+        <div class="seminar-program">
+            <h2> Программа семинара </h2>
+            <div class="seminar-text">
+                {{ seminar.description|safe|linebreaks }}
+
             </div>
 
         </div>
-        </div>
-
-<div class="container-sc">
-    <div class="con-and-enroll">
-        <div class="contacts text-white">
-           <h3> Контакты </h3>
-            <p> Крым: </p>
-            <p>+7 (988) 888-88-88 </p>
-            <p>Краснодар: </p>
-            <p>+7 (988) 888-88-88 </p>
-            <p>Мессенджеры: </p>
-            <div style="display:flex;">
-                <a class='custom-button' style="background: #229ED9;" href='https://t.me/dentima_class'>  <i class='fa-brands fa-telegram fa-lg'></i> </a>
-                <a class='custom-button' style="background:#43d854;" href="https://wa.me/79882434040">   <i class='fa-brands fa-whatsapp fa-lg'></i> </a>
-                <a class='custom-button' style="background:#7360F2;">   <i class='fa-brands fa-viber fa-lg'></i> </a>
-            </div>
-        </div>
-
-
-
-         <div class="enroll">
-
-            <form  action=''  method='post' class="form-example" onsubmit="process_form(event)">
-                <h3> Оставьте заявку: </h3>
-                    {% csrf_token %}
-                <div class="text-field">
-                    <input class='text-field__input' type="name" name="name" id="name" required placeholder="Имя"/>
-                </div>
-                <div class="text-field">
-                    <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
-                </div>
-                <div class="text-field">
-                    <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
-                </div>
-                <div id='form-success' class="text-field-success">Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
-                <div class="form">
-                    <input id="submit" type="submit" value="Записаться!" />
-                </div>
-
-             </form>
-        </div>
-
-
     </div>
 
 
+    {% include 'includes/lector_banner.html' %}
+
+        <div class="pricing">
+            <h2> Стоимость </h2>
+            <div class="text">   {{ seminar.pricing|linebreaks }} </div>
+        </div>
 
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <div class="contacts">
+                    <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                       <p class="h3 fw-bold"> Контакты </p>
+                        <p class="h4  mt-2"> Крым: </p>
+                        <p>+7 (988) 888-88-88 </p>
+                        <p class="h4 mt-2">Краснодар: </p>
+                        <p>+7 (988) 888-88-88 </p>
+                        <p class="h4  mt-4">Мессенджеры: </p>
+                        <div style="display:flex;">
+                            <a class='custom-button' style="background: #229ED9;" href='https://t.me/dentima_class'>  <i class='fa-brands fa-telegram fa-lg'></i> </a>
+                            <a class='custom-button' style="background:#43d854;" href="https://wa.me/79882434040">   <i class='fa-brands fa-whatsapp fa-lg'></i> </a>
+                            <a class='custom-button' style="background:#7360F2;">   <i class='fa-brands fa-viber fa-lg'></i> </a>
+                        </div>
+                   </div>
+                </div>
+            </div>
 
+            <div class="col-md-6 p-0">
+                <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                    <form  action=''  method='post' class="form-example d-flex flex-column" onsubmit="process_form(event)">
+                        <p class="h3 text-md-left mb-4 fw-bold"> Оставьте заявку: </p>
+                            {% csrf_token %}
+                        <div class="text-field">
+                            <input class='text-field__input' type="name" name="name" id="name" required placeholder="Имя"/>
+                        </div>
+                        <div class="text-field">
+                            <input class='text-field__input' type="email" name="email" id="email" required placeholder="Email"/>
+                        </div>
+                        <div class="text-field">
+                            <input  class='text-field__input' type="tel" name="phone" id="phone" required placeholder="Номер телефона"/>
+                        </div>
+                        <div id='form-success' class="text-field-success">Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="Записаться!" />
+                        </div>
+                     </form>
+                </div>
+            </div>
 
-
-
-
-
-
+            </div>
+        </div>
     </div>
 
 

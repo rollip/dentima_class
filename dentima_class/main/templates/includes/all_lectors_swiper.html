@@ -9,14 +9,14 @@
             <div class="swiper allLectorsSwiper" >
                 <div class="swiper-wrapper">
           <!-- Additional required wrapper -->
-                    {% for lector in lectors%}
+                    {% for lector in lectors %}
                         <div class="swiper-slide">
-                            <div class="lector-blob">
-                                <div class="image-wrap"> <img src="{{ lector.image.url }}" class="img-fluid"> </div>
-                                <div class=body>
-                                    <div class="name"> {{ lector.name }} </div>
-                                    <div class="specialization"> {{ lector.specialization }} </div>
-                                    <a class="blob-button" href="/lector/{{ lector.slug }}"> еще.. </a>
+                            <div class="card m-2" style='height:22rem; border-radius:15px; overflow:hidden'>
+                                <div class="wrap" style='height:14rem;overflow:hidden;'> <img src="{{ lector.image.url }}" class="card-img-top" alt="..." > </div>
+                               <div class="card-body" style='display:flex; flex-direction:column;'>
+                                    <p class="h6 fw-bold"> {{ lector.name }} </p>
+                                    <p class="" style="font-size:14px"> <small> {{ lector.specialization }} </small>  </p>
+                                   <a href="/lector/{{ lector.slug }}" class="btn btn-primary mt-auto btn-mystyle-lector" > еще..</a>
                                 </div>
                             </div>
                         </div>
@@ -29,6 +29,10 @@
             </div>
         </div>
     </div>
+
+
+
+
 
   	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'js/all_lectors_swiper.js' %}" ></script>

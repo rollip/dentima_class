@@ -5,11 +5,13 @@
 }
 
 .sem-img-wrap {
-    height:40svh;
+    height:30svh;
+    display:flex;
+    justify-content:center;
 }
 
 .sem-img-wrap img{
-    width:100%;
+    height:30svh;
 }
 
 @media (min-width: 768px) { 
@@ -18,7 +20,7 @@
      
     }
     .sem-img-wrap img {
-        height:100%;
+        height:30rem;
     }
     
 }

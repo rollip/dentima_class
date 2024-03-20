@@ -5,11 +5,10 @@
 }
 
 .sem-img-wrap {
-    height:15rem;
+    height:40svh;
 }
 
 .sem-img-wrap img{
-    
     width:100%;
 }
 
@@ -33,6 +32,26 @@
         height:30rem;
         }
     }
+
+
+.pricing .header, .seminar-program .header{
+    text-align: center;
+    }
+
+
+
+@media (min-width: 768px) {
+    .pricing .header , .seminar-program .header{
+        text-align: left;
+        }
+    }
+
+
+
+
+
+
+
 
 
 .top-enroll-button{

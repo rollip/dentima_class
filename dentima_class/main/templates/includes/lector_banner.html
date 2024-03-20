@@ -3,30 +3,37 @@
 
 
 
-
-        {% for lector in lectors %}
-        {% if lector %}
 <div class="lector-banner">
-        <div class="container col-lg-12 p-0">
-          <div class="row p-0 m-0">
-              <div class='col-md-4 p-4'>
-                        {% if lector.image %}
-                            <div class="img-wrap d-flex justify-content-center overflow-hidden">
-                                <img class="" src="{{ lector.image.url }}" >
-                            </div>
-                        {% endif %}
-              </div>
-              
-              <div class='col-md-8 p-0'>
-                  <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
-                                <p class="h4"> ЛЕКТОР: </p>
-                                <p class="h2 fw-bold"> {{ lector.name }} </p>
-                                <p class="h5"> {{ lector.specialization }} </h5>
-                                 <p  {{ lector.short_desc|linebreaks }} </p>
+{% for lector in lectors %}
+{% if lector  %}
+
+            <div class="container p-0 ">
+                <div class="container col-lg-12 p-0 mt-5">
+                  <div class="row p-0 m-0 lector-banner-image">
+                      <div class='col-md-4 p-0'>
+                                {% if lector.image %}
+                                    <div class="img-wrap d-flex justify-content-center overflow-hidden">
+                                        <img class="" src="{{ lector.image.url }}" >
+                                    </div>
+                                {% endif %}
+                      </div>
+                      <div class='col-md-8 p-0 lector-banner-text'>
+                              <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                                            <p class="h4"> ЛЕКТОР: </p>
+                                            <p class="h2 fw-bold"> {{ lector.name }} </p>
+                                            <p class="h5"> {{ lector.specialization }} </p>
+                                             <p  {{ lector.short_desc|linebreaks }} </p>
+                              </div>
+
+                      </div>
+
+
                   </div>
-              </div>
-                {% endif %}
-                {% endfor %}
-          </div>
-        </div>
- </div>
+                </div>
+            </div>
+
+
+{% endif %}
+{% endfor %}
+
+</div>

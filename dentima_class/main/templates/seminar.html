@@ -39,23 +39,25 @@
         </div>
     </div>
 
-    <div class="container-sc">
-        <div class="seminar-program">
-            <h2> Программа семинара </h2>
-            <div class="seminar-text">
-                {{ seminar.description|safe|linebreaks }}
 
+
+        <div class="seminar-program my-5">
+            <div class="container">
+                    <p class="h1 fw-bold my-3 header"> Программа семинара </p>
+                    <div class="text"> {{ seminar.description|safe|linebreaks }} </div>
             </div>
-
         </div>
-    </div>
 
 
     {% include 'includes/lector_banner.html' %}
 
-        <div class="pricing">
-            <h2> Стоимость </h2>
-            <div class="text">   {{ seminar.pricing|linebreaks }} </div>
+        <div class="pricing my-5">
+            <div class="container">
+                <p class="h1 fw-bold my-3 header"> Стоимость {% if seminar.pricing|length  < 20 %}  {{ seminar.pricing }} </p>
+                {% else %}
+                <div class="text fs-5">   {{ seminar.pricing|linebreaks }} </div>
+                {% endif %}
+            </div>
         </div>
 
 
@@ -104,8 +106,6 @@
 
             </div>
         </div>
-    </div>
-
 
 
 

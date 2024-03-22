@@ -153,5 +153,5 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 
 
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 

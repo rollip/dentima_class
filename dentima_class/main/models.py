@@ -41,7 +41,7 @@ class Seminar(models.Model):
     type = models.CharField(max_length=50, default='лекция' , verbose_name='лекция/практика')
     food = models.CharField(max_length=50,  default='кофе-брейк', verbose_name='обед/кофе-брей')
     description = models.TextField(max_length=10000, verbose_name='Описание (заголовок в формате <p class="h2 my-3"> День 1 </p>) ')
-    pricing = models.TextField(max_length=3000)
+    pricing = models.TextField(max_length=3000, verbose_name='Стоимость')
 
     class Meta:
         db_table = 'seminar'

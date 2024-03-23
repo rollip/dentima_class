@@ -24,7 +24,7 @@
           <!-- Additional required wrapper -->
                     {% for seminar in seminars %}
                     <div class="card card-seminars m-2" style='border-radius:15px; overflow:hidden'>
-                              <img src="{{ seminar.background_image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
+                              <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
                               <div class="card-body" style='display:flex;flex-direction:column;'>
                                 <p class="h6 card-title"> {{ seminar.name }} </p>
                                         <div class="lector-wrap">

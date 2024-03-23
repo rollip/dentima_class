@@ -32,7 +32,7 @@ class Seminar(models.Model):
 
     name = models.CharField(max_length=200,unique=True, verbose_name='Название')
     slug = models.SlugField(max_length=250, unique=True, blank=True, null=True, verbose_name='Часть ссылки (автозаполняется)')
-    seminar_image = models.ImageField(upload_to='seminar/image',default='seminar/images/empty_seminar.jpg',blank=True,null=True, verbose_name='Картинка' )
+    image = models.ImageField(upload_to='seminar/image',default='seminar/images/empty_seminar.jpg',blank=True,null=True, verbose_name='Картинка' )
     start_date = models.DateField(verbose_name='Начало')
     end_date = models.DateField(verbose_name='Окончание')
     lector = models.ForeignKey(to=Lector, on_delete=models.PROTECT, related_name='lector', verbose_name='Лектор 1')

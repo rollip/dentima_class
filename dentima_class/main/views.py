@@ -54,6 +54,10 @@ def seminar(request, seminar_slug=None):
 
 
 
+def contact(request):
+    return render(request, 'contact.html')
+
+
 
 def mail(request):
     send_email(request)

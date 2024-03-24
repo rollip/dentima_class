@@ -11,34 +11,49 @@
             <div class="swiper allSeminarsSwiper" >
                 <div class="swiper-wrapper">
           <!-- Additional required wrapper -->
+          
+                    {% if seminars|length == 0 %}
+
+                    <div class="swiper-slide" style='margin:0 0.2rem; padding: 0 0rem;'>
+                      <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
+                        <img src="/media/seminar/images/empty_seminar.jpg" class="card-img-top" alt="..." style='height:10rem;'>
+                        <div class="card-body" style='display:flex;flex-direction:column;'>
+                          <h6 class="card-title"> Упс! Семинары не загружены </h5>
+                                  <div class="lector-wrap">
+                                      <img src="/media/lector/images/empty_lector.jpg" class="rounded-circle">
+                                  <div class="lector-name d-flex my-auto ms-2">Лучший лектор</div>
+                                  </div>
+                          <a href="#" class="btn btn-primary btn-mystyle" > Подробнее</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    {% endif %}
+
+
+
                     {% for seminar in seminars %}
                     <div class="swiper-slide" style='margin:0 0.2rem; padding: 0 0rem;'>
-                            <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
-                              <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
-                              <div class="card-body" style='display:flex;flex-direction:column;'>
-                                <h6 class="card-title"> {{ seminar.name }} </h5>
-                                        <div class="lector-wrap">
-                                            <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
-                                        <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector.name }}</div>
-                                        </div>
-                                        {% if seminar.lector_2 %}
-                                        <div class="lector-wrap">
-                                            <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
-                                            <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector_2.name }}</div>
-                                        </div>
-                                        {% endif %}
-                                <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle" > Подробнее</a>
-                              </div>
-                            </div>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                
-                    {% endfor %}
+                        <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
+                          <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
+                          <div class="card-body" style='display:flex;flex-direction:column;'>
+                            <h6 class="card-title"> {{ seminar.name }} </h5>
+                                    <div class="lector-wrap">
+                                        <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
+                                    <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector.name }}</div>
+                                    </div>
+                                    {% if seminar.lector_2 %}
+                                    <div class="lector-wrap">
+                                        <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
+                                        <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector_2.name }}</div>
+                                    </div>
+                                    {% endif %}
+                            <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle" > Подробнее</a>
+                          </div>
+                        </div>
+                      </div>
+
+                     {% endfor %}
 
 
                 </div>

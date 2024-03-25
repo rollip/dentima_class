@@ -33,8 +33,8 @@
 
 
                     {% for seminar in seminars %}
-                    <div class="swiper-slide" style='margin:0 0.2rem; padding: 0 0rem;'>
-                        <div class="card card-seminars m-2" style='border-radius:15px; overflow:hidden'>
+                    <div class="swiper-slide m-2" style='margin:0 0.2rem; padding: 0 0rem;'>
+                        <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
                           <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
                           <div class="card-body" style='display:flex;flex-direction:column;'>
                             <h6 class="card-title"> {{ seminar.name }} </h5>

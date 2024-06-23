@@ -37,34 +37,53 @@
 
   <body>
 
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar__wrap w-100">
-          <a href="/" class="logo d-flex my-auto" id="logo">Dentima Class</a>
-          <ul class="menu" id="menu">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/seminar">Семинары</a></li>
-            <li><a href="/about">О нас</a></li>
-            <li><a href="/contact">Контакты</a></li>
-            <li><a href="tel:+79882434040">+7 (988) 243-40-40</a></li>
-            <li>
-                <a class='custom-button' href="https://wa.me/79882434040" > <i class='fa-brands fa-whatsapp fa-lg'></i> </a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container py-2">
+            <div class="d-flex align-items-center justify-content-center"> <a class="navbar-brand fs-4 fw-bold" href="/">DENTIMA CLASS</a> </div>
 
-          </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="order: 1;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-		  <div class="hamb">
-            <div class="hamb__field" id="hamb">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+            <div class="collapse navbar-collapse justify-content-end py-1" id="navbarNav" style="order: 3;">
+                <ul class="navbar-nav py-5 py-md-0">
+                    <li class="nav-item ms-3 ">
+                        <a class="nav-link fs-5" href="/">Главная</a>
+
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link fs-5" href="/seminar">Семинары</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link fs-5" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link fs-5" href="/contact">Контакты</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link fs-5" href="tel:+79882434040">+7 (988) 243-40-40</a>
+                    </li>
+                    <li class="nav-item ms-3 ">
+                        <div class="d-flex align-items-center ">
+                          <p class="d-md-none fs-5 me-2"> WhatsApp</p>
+                          <a class="nav-link custom-button fs-5" href="https://wa.me/79882434040">  <i
+                                class="fab fa-whatsapp fa-lg"> </i> </a>
+
+                        </div>
+
+
+                    </li>
+                </ul>
+                <hr class="hr" />
+
             </div>
-          </div>
-		  <div class="popup" id="popup"></div>
-
-		</div>
-      </div>
+            <hr class="hr" />
+        </div>
     </nav>
+
+
+
 
 
 
@@ -76,15 +95,50 @@
 
 
 
-    <footer class="footer">
-      <div class="container">
-        <div class="content">
-          <div class="contact-box">
+
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-center text-md-start">
+            <div class="row">
+                <div class="col-3 col-md-5 d-flex justify-content-start ">
+                    <img src="https://via.placeholder.com/100" alt="Логотип" class="logo mb-3">
+                </div>
+                <div class="col-9    col-md-7">
+                    <p class="text-start" style="font-size:1rem">Dentima-Class<br>© 2020 - 2024</p>
+                </div>
+            </div>
+            <p class="text-start mb-3" >
+                <a href="#" class="text-reset text-decoration-underline">Политика конфиденциальности</a>  <br>
+                <a href="#" class="text-reset text-decoration-underline">Договор-оферта</a> <br>
+                <a href="#" class="text-reset text-decoration-underline">Реквизиты</a>
+            </p>
+        </div>
+
+
+        <div class="col-md-5 text-md-start">
+          <div class="contact-info mb-3">
+           <p class="fs-4 fw-bold mb-3">+7 (495) 150-27-16<br>+7 (495) 939-30-30 </p>
+            <p class="fs-6"> Будни: 9:00–20:30, Сб: 9:00–18:00, Вс: 10:00–17:00 </p>
           </div>
-          <p> © 2018-{% now "Y" %} Dentima-Class. Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических занятий и мастер-классов для стоматологов и зубных техников.
+          <div class="disclaimer">
+              <p class="mb-3"> Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических занятий и мастер-классов для стоматологов и зубных техников. </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-start">
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i>Наш канал в Яндекс Дзен</a>
+            <a href="#"><i class="fab fa-youtube"></i>Наш канал YouTube</a>
+            <div class="mt-2"> <a href="#"> &lt;/&gt; Development</a> </div>
+          </div>
         </div>
       </div>
-      <script src="{% static 'js/burger.js' %} "></script>
-    </footer>
+    </div>
+
+    <script src="{% static 'js/burger.js' %}"></script>
+  </footer>
+
+
+
   </body>
 </html>

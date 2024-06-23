@@ -66,8 +66,8 @@ def documents(request, document_slug=None):
         return HttpResponse('404')
     elif document_slug == 'politika_obrabotki_personalnih_dannih':
         return render(request, 'documents/politika_obrabotki_personalnih_dannih.html')
-    elif document_slug == 'dogovor-oferta':
-        return render(request, 'documents/dogovor-oferta.html')
+    elif document_slug == 'dogovor_oferta':
+        return render(request, 'documents/dogovor_oferta.html')
     elif document_slug == 'credentials':
         return render(request, 'documents/credentials.html')
 

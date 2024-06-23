@@ -11,6 +11,8 @@ urlpatterns = [
     path('about/', views.about),
     path('contact/', views.contact),
     path('send_email', views.mail),
+    path('documents/<document_slug>', views.documents),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

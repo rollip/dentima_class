@@ -61,6 +61,16 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
+def documents(request, document_slug=None):
+    if document_slug is None:
+        return HttpResponse('404')
+    elif document_slug == 'politika_obrabotki_personalnih_dannih':
+        return render(request, 'documents/politika_obrabotki_personalnih_dannih.html')
+    elif document_slug == 'dogovor-oferta':
+        return render(request, 'documents/dogovor-oferta.html')
+    elif document_slug == 'credentials':
+        return render(request, 'documents/credentials.html')
+
 
 
 def mail(request):

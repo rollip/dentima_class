@@ -11,10 +11,7 @@ marque {
 
 }
 
-.marque h1,
-p {
-  margin-bottom: 20px;
-}
+
 .marque .wrap {
   max-width: 1300px;
   margin: auto;

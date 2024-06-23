@@ -13,7 +13,6 @@ const allLectorsSwiper = new Swiper('.allLectorsSwiper', {
   loop: true,
   slidesPerView: slidesPerView,
 
-
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',

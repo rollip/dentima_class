@@ -6,16 +6,14 @@
 <!-- Main page banner -->
     <div class="seminars-container-wrap">
         <div class="container">
-            <p class="h1 mb-3">Лекторы </p>
-            <div class="swiper allLectorsSwiper" >
-                <div class="swiper-wrapper">
+            <p class="h1 my-5 fw-bold text-center">Лекторы </p>
+            <div class="swiper allLectorsSwiper" style="height:24rem;">
+                <div class="swiper-wrapper" >
           <!-- Additional required wrapper -->
 
 
-
-
                     {% if lectors|length == 0 %}
-                    <div class="swiper-slide m-2">
+                    <div class="swiper-slide ms-3">
                         <div class="card" style='height:22rem; border-radius:15px; overflow:hidden'>
                             <div class="wrap" style='height:13rem;overflow:hidden; background:#d2ddff;'> <img src="/media/lector/images/empty_lector.jpg" class="card-img-top" alt="..." > </div>
                             <div class="card-body" style='display:flex; flex-direction:column;'>
@@ -34,7 +32,7 @@
                         <div class="swiper-slide">
                             <div class="card m-2" style='height:22rem; border-radius:15px; overflow:hidden'>
                                 <div class="wrap" style='height:13rem;overflow:hidden; background:#d2ddff;'> <img src="{{ lector.image.url }}" class="card-img-top" alt="..." > </div>
-                               <div class="card-body" style='display:flex; flex-direction:column;'>
+                               <div class="card-body d-flex flex-column">
                                     <p class="h6 fw-bold"> {{ lector.name }} </p>
                                     <p class="" style="font-size:14px"> <small> {{ lector.specialization }} </small>  </p>
                                    <a href="/lector/{{ lector.slug }}" class="btn btn-primary mt-auto btn-mystyle-lector" > еще..</a>
@@ -46,8 +44,9 @@
 
                 </div>
 
-                    <div class="swiper-scrollbar"></div>
+            <div class="swiper-scrollbar"></div>
             </div>
+
         </div>
     </div>
 
@@ -57,3 +56,5 @@
 
   	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'js/all_lectors_swiper.js' %}" ></script>
+
+

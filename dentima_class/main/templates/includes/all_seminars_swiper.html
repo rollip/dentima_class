@@ -5,17 +5,16 @@
 <link rel="stylesheet" href="{% static 'css/includes/all_seminars_swiper.css' %}" />
 
 <!-- Main page banner -->
-    <div class="seminars-container-wrap">
-        <div class="container">
-            <p class="h1 mb-3">Все семинары</p>
+        <div class="container p-0">
+            <p class="h1 my-5 fw-bold text-center"> Cеминары </p>
             <div class="swiper allSeminarsSwiper" >
                 <div class="swiper-wrapper">
           <!-- Additional required wrapper -->
           
                     {% if seminars|length == 0 %}
 
-                    <div class="swiper-slide">
-                      <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
+                    <div class="swiper-slide ">
+                      <div class="card card-seminars" style='border-radius:15px; overflow:hidden; height:30rem;'>
                         <img src="/media/seminar/images/empty_seminar.jpg" class="card-img-top" alt="..." style='height:10rem;'>
                         <div class="card-body" style='display:flex;flex-direction:column;'>
                           <h6 class="card-title"> Упс! Семинары не загружены </h5>
@@ -33,22 +32,22 @@
 
 
                     {% for seminar in seminars %}
-                    <div class="swiper-slide m-2" style='margin:0 0.2rem; padding: 0 0rem;'>
-                        <div class="card card-seminars" style='border-radius:15px; overflow:hidden'>
-                          <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
+                    <div class="swiper-slide ">
+                        <div class="card card-seminars me-2 mb-4  ms-2 ms-md-0 " style='border-radius:15px; overflow:hidden'>
+                          <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:15rem;'>
                           <div class="card-body" style='display:flex;flex-direction:column;'>
-                            <h6 class="card-title"> {{ seminar.name }} </h5>
-                                    <div class="lector-wrap">
+                            <p class="fs-6 fs-md-5 fw-bold"> {{ seminar.name }} </p>
+                                    <div class="lector-wrap mt-auto">
                                         <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
-                                    <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector.name }}</div>
+                                    <div class="my-auto ms-2">{{ seminar.lector.name }}</div>
                                     </div>
                                     {% if seminar.lector_2 %}
                                     <div class="lector-wrap">
                                         <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
-                                        <div class="lector-name d-flex my-auto ms-2">{{ seminar.lector_2.name }}</div>
+                                        <div class="my-auto ms-2">{{ seminar.lector_2.name }}</div>
                                     </div>
                                     {% endif %}
-                            <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle" > Подробнее</a>
+                            <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle mt-3" > Подробнее</a>
                           </div>
                         </div>
                       </div>
@@ -61,7 +60,8 @@
                     <div class="swiper-scrollbar"></div>
             </div>
         </div>
-    </div>
 
   	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'js/all_seminars_swiper.js' %}" ></script>
+
+

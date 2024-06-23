@@ -12,6 +12,9 @@ html {
 }
 
 
+
+
+
 body {
 
   display: flex;
@@ -26,7 +29,33 @@ a {
 }
 
 
+
+
 .footer {
   background-color: #f8f8f8;
 }
 
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -60%; /* начальное положение за пределами экрана */
+        width: 60%; /* ширина выезжающего меню */
+        height: 100vh; /* полный экран по высоте */
+        background-color: white; /* чисто белый фон */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* тень для выезжающего меню */
+        transition: right 0.3s ease-in-out; /* плавное перемещение */
+        z-index: 2000; /* поднятие над остальными элементами */
+    }
+
+    .navbar .navbar-collapse.show {
+        right: 0; /* показываем меню при разворачивании */
+    }
+
+    .navbar .navbar-toggler {
+
+        z-index: 2000; /* поднятие над остальными элементами */
+    }
+}

@@ -18,7 +18,7 @@
     <div class="row">
         <div class='col-md-8'>
             <div class="container-fluid d-flex flex-column p-md-5  py-5 px-3 text-white rounded-5 index-head " style="min-height: 30rem;">
-                <p class="display-4 mb-2 fw-bold animate__animated" id="text1">Передаем опыт от лучших специалистов</p>
+                <p class="display-4 mb-2 animate__animated" id="text1">Передаем опыт от лучших специалистов</p>
                 <div class="mt-auto d-flex flex-wrap">
                     <p class="p-2 px-3 m-1 border border-white rounded-5">Терапия</p>
                     <p class="p-2 px-3 m-1 border border-white rounded-5">Гигиена</p>
@@ -26,8 +26,6 @@
                     <p class="p-2 px-3 m-1 border border-white rounded-5">Хирургия</p>
                     <p class="p-2 px-3 m-1 border border-white rounded-5">Эндодонтия</p>
                     <p class="p-2 px-3 m-1 border border-white rounded-5">и др.</p>
-
-
                 </div>
             </div>
 
@@ -72,7 +70,6 @@
             }
 
             function fetchText(index, callback) {
-                // Имитация AJAX запроса с использованием setTimeout
                 setTimeout(() => {
                     callback(texts[index]);
                 }, 500);
@@ -86,7 +83,7 @@
 
         <div class='col-md-4'>
             <div class="container-fluid d-flex flex-column p-5 mt-2 mt-md-0 h-100 rounded-5 bg-light" style="min-height: 15rem">
-                    <p class="display-4 fw-bold mb-2 lh-1">Dentima Class</p>
+                    <p class="display-5 fw-bold mb-2 lh-1">Dentima Class</p>
                  <p class="fs-6">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических
                 занятий и мастер-классов для стоматологов и зубных техников.</p>
                 <a href="#" class="mt-md-auto btn btn-primary btn-mystyle rounded-5 mt-5"> Подробнее</a>
@@ -103,9 +100,11 @@
 
 
   {% include 'includes/all_seminars_swiper.html' %}
+
+  {% include 'includes/why_us.html' %}
+
 {% include 'includes/blog.html' %}
   {% include 'includes/all_lectors_swiper.html' %}
-  {% include 'includes/why_us.html' %}
 
 
 
@@ -113,6 +112,7 @@
 
 
   {% include 'includes/marque.html' %}
+
 
 {% endblock %}
 

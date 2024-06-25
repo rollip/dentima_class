@@ -36,7 +36,7 @@ function process_form(e)
 ).then(
     html => console.log(html)
 );
-    submit.classList.add("success");
-    a = document.getElementById('form-success')
-    a.style.display = 'block'
+    a = document.getElementById('alert-success')
+    a.classList.remove("d-none");
+    a.classList.add("d-flex");
 }

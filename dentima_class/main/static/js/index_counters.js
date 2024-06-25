@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
         $('.counter').each(function () {
@@ -12,8 +11,8 @@ $(document).ready(function() {
         }
     });
 });
- 
-});  
+
+});
 
 
 

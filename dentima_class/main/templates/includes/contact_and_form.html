@@ -1,0 +1,113 @@
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/includes/contact_and_form.css' %}" />
+<script src="{% static 'js/form_processing.js' %} "> </script>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3 text-white rounded-5" style="background:#140d4f;">
+                   <p class="h3 fw-bold"> Контакты </p>
+                    <p class="h4  mt-2"> Крым: </p>
+                    <p>+7 (988) 888-88-88 </p>
+                    <p class="h4 mt-2">Краснодар: </p>
+                    <p>+7 (988) 888-88-88 </p>
+                    <p class="h4  mt-4">Мессенджеры: </p>
+                    <div class="d-flex gap-3">
+                        <a class='fs-4  custom-button btn p-4' style="background: #229ED9;" href='https://t.me/dentima_class'>
+                            <i class='fa-brands fa-telegram fa-lg'></i>
+                        </a>
+                        <a class=' fs-4 custom-button btn' style="background: #43d854;" href="https://wa.me/79882434040">
+                            <i class='fa-brands fa-whatsapp fa-lg'></i>
+                        </a>
+                        <a class='fs-4 custom-button btn' style="background: #7360F2;" href="viber://chat?number=%2B79882434040">
+                            <i class='fa-brands fa-viber fa-lg'></i>
+                        </a>
+                    </div>
+
+
+               </div>
+        </div>
+
+        <div class="col-md-6 p-0">
+            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                <form action='' method='post' class="needs-validation" novalidate>
+                    <p class="h3 text-md-left mb-4 fw-bold">Свяжитесь с нами:</p>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Имя">
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите ваше имя.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите корректный email.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Номер телефона">
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите ваш номер телефона.
+                        </div>
+                    </div>
+                    <div id='form-success' class="form-success alert alert-success" >Спасибо за заявку, в ближайшее время с Вами свяжется наш менеджер</div>
+                    <button type="submit" class="btn btn-primary btn-mystyle" onclick="process_form(event)" >Отправить!</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+      <div class="card">
+        <div class="row p-5">
+            <div class="col-md-6">
+                <p class="fs-2 my-3 fw-bold">Ответим на все <br>ваши вопросы</p>
+                <p class="card-text my-3">Если вы хотите больше узнать о нас, уточнить детали или записаться на семинар, оставьте заявку — и мы перезвоним</p>
+            </div>
+            <div class="col-md-6">
+                <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Имя">
+            </div>
+            <div class="mb-3">
+              <div class="input-group">
+                <select class="form-select w-auto">
+                  <option value="ru" selected>🇷🇺 +7</option>
+                  <!-- Add other countries as needed -->
+                </select>
+                <input type="tel" class="form-control" id="phone" placeholder="Телефон">
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Электронная почта">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Отправить</button>
+          </form>
+
+            <p class="mt-3 small">Нажимая на кнопку, я соглашаюсь на <a href="https://skillbox.ru/legal-docs/chou/file/privacy_policy/version-120324.pdf" target="_blank">обработку персональных данных</a> и с <a href="https://skillbox.ru/legal-docs/skillbox/file/terms_of_use/version-100322.pdf" target="_blank">правилами пользования Платформой</a></p>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+{% endblock %}

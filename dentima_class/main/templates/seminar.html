@@ -17,24 +17,24 @@
             </div>
 
 
-                <div class='col-md-6 p-0' >
-                    <div class="seminar-org">
-                    <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'>
-                            <p class="h5 mb-3"> {{ seminar.name }} </p>
-                            <p class="h3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
-                            <p class="mb-4">{{ seminar.address}}</p>
+            <div class='col-md-6 p-0' >
+                <div class="seminar-org">
+                <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'>
+                        <p class="h5 mb-3"> {{ seminar.name }} </p>
+                        <p class="h3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
+                        <p class="mb-4">{{ seminar.address}}</p>
 
-                            <p>лектор:</p>
-                            <p class="h3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
+                        <p>лектор:</p>
+                        <p class="h3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
 
-                            <p>{{ seminar.type }}</p>
-                            <p>{{ seminar.food }}</p>
-                            <p class="mb-4">сертификат</p>
-                            <div class="top-enroll-button d-flex mt-auto">   <a href='#submit' >Записаться</a> </div>
-                    </div>
-
-                    </div>
+                        <p>{{ seminar.type }}</p>
+                        <p>{{ seminar.food }}</p>
+                        <p class="mb-4">сертификат</p>
+                        <div class="top-enroll-button d-flex mt-auto">   <a href='#submit' >Записаться</a> </div>
                 </div>
+
+                </div>
+            </div>
 
         </div>
     </div>

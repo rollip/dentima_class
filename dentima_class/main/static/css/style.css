@@ -37,6 +37,17 @@ a {
 }
 
 
+.btn-mystyle {
+    border-radius:10px;
+    color:white;
+    background: #140D4F;
+    padding: 10px;
+    text-align: center;
+    border:none;
+}
+
+
+
 
 @media (max-width: 991.98px) {
     .navbar .navbar-collapse {

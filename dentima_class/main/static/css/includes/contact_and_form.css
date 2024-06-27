@@ -1,4 +1,4 @@
-.custom-button {
+.contact-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +9,10 @@
     color: white;
 }
 
-.custom-button i {
+.contact-button i {
     transition: transform 0.2s ease;
 }
 
-.custom-button:hover i {
+.contact-button:hover i {
     transform: scale(1.2);
 }

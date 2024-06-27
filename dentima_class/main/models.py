@@ -40,7 +40,7 @@ class Seminar(models.Model):
     address = models.CharField(max_length=100, unique=False, verbose_name='Адрес')
     type = models.CharField(max_length=50, default='лекция' , verbose_name='лекция/практика')
     food = models.CharField(max_length=50,  default='кофе-брейк', verbose_name='обед/кофе-брей')
-    description = models.TextField(max_length=10000, verbose_name='Описание (заголовок в формате <p class="h2 my-3"> День 1 </p>) ')
+    description = models.TextField(max_length=10000, verbose_name='Описание (заголовок в формате <p class="h2 mt-5 mb-2"> День 1 </p>) ')
     pricing = models.TextField(max_length=3000, verbose_name='Стоимость')
 
     class Meta:

@@ -8,30 +8,36 @@
 
 
 {% block content %}
-    <div class="container col-md-12 "   >
-        <div class="container rounded-5 overflow-hidden bg-light shadow-sm">
+    <div class="container col-md-12"   >
+        <div class="container">
         <div class="row">
             <div class='col-md-6 p-0'>
-                <div class="sem-img-wrap w-100">
-                    <img class='img-fluid object-fit-cover' src="{{ seminar.image.url }}">
+                <div class="sem-img-wrap w-100 p-md-3 mb-3">
+                    <img class='img-fluid object-fit-cover rounded-5 overflow-hidden' src="{{ seminar.image.url }}">
                 </div>
             </div>
 
 
             <div class='col-md-6 p-0 ' >
-                <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3'>
-                        <p class="h5 mb-3"> {{ seminar.name }} </p>
-                        <p class="h3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
+                <div class="container rounded-5 overflow-hidden     " style="border-color:#08113c">
+                    <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3 p-3'>
+                        <p class="fs-4 mb-3"> {{ seminar.name }} </p>
+                        <p class="fs-3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
                         <p class="mb-4">{{ seminar.address}}</p>
 
                         <p>лектор:</p>
-                        <p class="h3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
+                        <p class="fs-3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
 
                         <p>{{ seminar.type }}</p>
                         <p>{{ seminar.food }}</p>
                         <p class="mb-4">сертификат</p>
                         <div class="rounded-5 text-reset  btn btn-primary btn-mystyle mt-auto">   <a class="text-white" href='#submit' >Записаться</a> </div>
                 </div>
+
+
+
+                </div>
+
 
             </div>
 
@@ -43,7 +49,7 @@
 
         <div class="seminar-program my-5">
             <div class="container">
-                    <p class="h1 fw-bold my-3 header"> Программа семинара </p>
+                    <p class="display-6 text-center fw-bold my-3 mb-5 header"> Программа семинара </p>
                     <div class="text"> {{ seminar.description|safe|linebreaks }} </div>
             </div>
         </div>

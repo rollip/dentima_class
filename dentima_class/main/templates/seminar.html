@@ -8,37 +8,83 @@
 
 
 {% block content %}
+
+
+
     <div class="container col-md-12"   >
         <div class="row">
-            <div class='col-md-6 p-0'>
+            <div class='col-md-7'>
                 <div class="sem-img-wrap w-100 p-md-3 mb-3">
                     <img class='img-fluid object-fit-cover rounded-5 overflow-hidden' src="{{ seminar.image.url }}">
                 </div>
             </div>
 
 
-            <div class='col-md-6 p-0 ' >
-                <div class="container rounded-5 overflow-hidden     " style="border-color:#08113c">
-                    <div class='container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3 p-3'>
-                        <p class="fs-4 mb-3"> {{ seminar.name }} </p>
-                        <p class="fs-3 m-0 fw-bold"> {{ seminar.start_date|date:"d.m" }} {% if seminar.start_date != seminar.end_date %} - {{ seminar.end_date|date:"d.m" }} {% endif %}</h3>
-                        <p class="mb-4">{{ seminar.address}}</p>
+            <div class='col-md-5 p-0 '>
+                <div class="container-fluid h-100 overflow-hidden" >
+                    <div class=' h-100 d-flex flex-column p-md-5 py-5 px-3 p-3 rounded-5 bg-light'    >
+                        <p class="fs-3 mb-4 "> {{ seminar.name }} </p>
+                        <div class="d-grid gap-1">
+                                    <div class="rounded-5 bg-white p-3">
+                                        <p class="  d-flex align-items-center">
+                                            <i class=" fas fw-bold fs-4 fa-calendar-alt me-3 " style="color:#a4c639"></i>
 
-                        <p>лектор:</p>
-                        <p class="fs-3 mb-4 fw-bold">{{ seminar.lector.name }} {% if seminar.lector_2 %} и {{ seminar.lector_2.name }} {% endif %} </h3>
+                                            {% if seminar.start_date == seminar.end_date %}
+                                                {{ seminar.start_date|date:"d E Y" }}
+                                            {% elif seminar.start_date != seminar.end_date %}
+                                                {{ seminar.start_date|date:"d" }} - {{ seminar.end_date|date:"d E" }}
+                                            {% endif %}
+                                        </p>
 
-                        <p>{{ seminar.type }}</p>
-                        <p>{{ seminar.food }}</p>
-                        <p class="mb-4">сертификат</p>
-                        <div class="rounded-5 text-reset  btn btn-primary btn-mystyle mt-auto">   <a class="text-white" href='#submit' >Записаться</a> </div>
+
+                                        <p class="fs-5">
+                                        </p>
+                                        </div>
+
+                                    <div class="rounded-5 bg-white p-3 ">
+
+                                    <p class=" d-flex align-items-center">
+                                        <i class="fas fw-bold fs-3 fa-map-marker-alt me-3" style="color:#a4c639"></i> <span>  {{ seminar.address }} </span>
+                                    </p>
+
+                                    </div>
+
+
+
+
+                            <div class="rounded-5 bg-white p-3">
+
+                                <p class="  d-flex align-items-center">
+                                    <i class="fas  fs-4 fa-chalkboard-teacher me-3 " style="color:#a4c639" ></i>
+                                    {{ seminar.lector.name }}
+                                    {% if seminar.lector_2 %}
+                                        и <br> {{ seminar.lector_2.name }}
+                                    {% endif %}
+                                </p>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="d-flex flex-row my-2 gap-1">
+                                <p class="p-2 rounded-5 bg-white">{{ seminar.type }}</p>
+                                <p class="p-2 rounded-5 bg-white">{{ seminar.food }}</p>
+                                <p class="p-2 rounded-5 bg-white"">сертификат</p>
+                            </div>
+
+
+
+                    </div>
+                        <div class="rounded-5 text-reset  btn btn-primary btn-mystyle mt-md-auto mt-3 ">   <a class="text-white  fs-5" href='#submit' >Записаться</a> </div>
+                    </div>
+
+                    </div>
+
                 </div>
 
-
-
-                </div>
-
-
-            </div>
 
         </div>
     </div>
@@ -46,12 +92,26 @@
 
 
 
-        <div class="seminar-program my-5">
-            <div class="container">
-                    <p class="display-6 text-center fw-bold my-3 mb-5 header"> Программа семинара </p>
-                    <div class="text"> {{ seminar.description|safe|linebreaks }} </div>
+
+<div class="container my-4 d-flex align-items-center justify-content-center flex-column rounded-5 bg-light" >
+
+    <button class="btn collapse-button collapsed d-flex align-items-center justify-content-center w-100 p-5  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseProgram" aria-expanded="false" aria-controls="collapseProgram" >
+        <p class="display-6 fw-bold header ">Программа</p>
+        <div class="bg-light rounded-circle p-3 d-flex align-items-center justify-content-center mx-4" style="height:2rem;width:2rem;"> <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+    </button>
+    <div class="collapse pb-3 p-md-5" id="collapseProgram">
+            <div class="text container p-4 p-md-5 rounded-5 bg-white  ">
+                {{ seminar.description|safe|linebreaks }}
             </div>
-        </div>
+    </div>
+
+</div>
+
+
+
+
+</div>
+
 
 
     {% include 'includes/lector_banner.html' %}

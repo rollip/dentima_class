@@ -1,0 +1,6 @@
+        .collapse-button .fa-chevron-down {
+            transition: transform 0.3s;
+        }
+        .collapse-button.collapsed .fa-chevron-down {
+            transform: rotate(180deg);
+        }

@@ -3,7 +3,7 @@ var rows = 2
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
     // Take the user to a different screen here.
-    slidesPerView = 1.3
+    slidesPerView = 1.15
     rows = 1
 
 }

@@ -42,7 +42,10 @@ def seminar(request, seminar_slug=None):
     else:
         try:
             seminar = Seminar.objects.get(slug=seminar_slug)
-            lectors = (seminar.lector, seminar.lector_2)
+            lectors = [seminar.lector]
+            if seminar.lector_2:
+                lectors.append(seminar.lector_2)
+
         except Seminar.DoesNotExist:
             return HttpResponse('404')
 

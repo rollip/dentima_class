@@ -1,0 +1,37 @@
+{% load static %}
+
+{% block content %}
+
+
+
+    <div class="container my-5 ">
+
+        <div class="row">
+            <div class="col-md-6">
+                <p class="display-4 text-center text-md-start mb-5 pt-3 ">Лекторы  курса</p>
+            </div>
+            <div class="col-md-6 p-2 ">
+                {% for lector in lectors %}
+                <div class="rounded-5 my-2 bg-light " >
+                    <div class="row">
+                        <div class="col-md-5">
+                        {% if lector.image %}
+                            <img class="img-fluid rounded-5 mb-4 mb-md-0 " src="{{ lector.image.url }}"  >
+                        {% endif %}
+                        </div>
+                        <div class="col-md-7">
+                        <div class="container p-3  rounded-5 p-4 ">
+                            <p class="fw-bold fs-2"> {{ lector.name }} </p>
+                            <p class="fs-5 mb-3"> {{ lector.specialization }} </p>
+                            <p  {{ lector.short_desc|linebreaks }} wdqqqqwdd dwqdwq dqw dwqdqw qw d wqdw  qwd q qdq dqwd wqdqw dw qdqw dq wdq w ddq dqw dqw dq dqd d1 </p>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

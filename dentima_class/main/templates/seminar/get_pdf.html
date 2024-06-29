@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block content %}
+
+<div class="bg-light p-3">
+
+    <div class="container">
+    <div class="row bg-white rounded-5 p-5">
+
+
+                <div class="container col-md-6 rounded-5   ">
+                    <p class="text-end fs-4 mb-4 "> Полная программа <br> семинара в формате PDF </p>
+                </div>
+
+
+                <div class="col-md-6 d-flex flex-column align-items-center">
+                    <div class=" w-75 rounded-5  bg-white">
+
+                    <p class="mb-3"> Введите свой @email и в течение 5 минут на него придет письмо с полной программой семинара в формате pdf</p>
+                                <form>
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                      <input type="email" class="form-control" id="email" placeholder="Электронная почта">
+                                    </div>
+
+                                    <div id='alert-success' class="alert alert-success d-none" role="alert" ">
+                                        <i class="fs-5 fas fa-check-circle "> &nbsp </i>
+                                        <div> Спасибо за заявку, ожидайте звонка </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-mystyle w-100  "  onclick="process_form(event)">Отправить</button>
+                                </form>
+                    </div>
+
+                </div>
+
+
+
+
+    </div>
+
+    </div>
+</div>
+{% endblock %}

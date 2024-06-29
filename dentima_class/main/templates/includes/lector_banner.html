@@ -7,13 +7,14 @@
 
             <div class="container">
                 <div class="container col-lg-12 mt-5">
-                  <div class="row rounded-5 text-white overflow-hidden" >
-                      <div class='col-md-4 p-0' >
+                  <div class="row text-white overflow-hidden" >
+                      <div class='col-md-4 p-0 p-md-1' >
                                 {% if lector.image %}
-                                        <img class="img-fluid" src="{{ lector.image.url }}" >
+                                        <img class="img-fluid rounded-5" src="{{ lector.image.url }}" >
                                 {% endif %}
                       </div>
-                      <div class='col-md-8 p-0 lector-banner-text' style="background:#08113c;">
+
+                      <div class='col-md-8 lector-banner-text rounded-5 ' style="background:#08113c;">
                               <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
                                             <p class="h4"> ЛЕКТОР: </p>
                                             <p class="h2 fw-bold"> {{ lector.name }} </p>

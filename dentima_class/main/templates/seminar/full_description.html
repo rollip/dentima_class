@@ -1,0 +1,25 @@
+
+
+ {% load static %}
+
+{% block content %}
+
+
+
+    <div class="container my-4    justify-content-center flex-column rounded-5 " >
+
+    <button class="btn collapse-button collapsed d-flex align-items-center justify-content-center w-100 p-4  rounded-5 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProgram" aria-expanded="false" aria-controls="collapseProgram" >
+        <p class="fs-2   fw-bold header">Программа</p>
+
+        <div class="bg-light rounded-circle p-3 d-flex align-items-center justify-content-center mx-4" style="height:3rem;width:3rem;"> <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+    </button>
+
+    <div class="collapse pb-3 p-md-5 " id="collapseProgram">
+            <div class="text container  rounded-5   ">
+                {{ seminar.description|safe|linebreaks }}
+            </div>
+    </div>
+
+    </div>
+
+ {% endblock %}

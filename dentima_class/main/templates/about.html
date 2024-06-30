@@ -30,11 +30,21 @@
 <div class="container col-lg-12">
     <div class="row">
         <div class='col-md-6'>
-            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"><h1 class="display-4 fw-bold mb-2">
-                Dentima Class</h1>
-                <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов,
-                    практических занятий и мастер-классов для стоматологов и зубных техников.</p>
+            <div class=" container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
+                <h1 class="display-5 fw-bold mb-2 lh-1 mb-4"> Сотрудничество </h1>
+
+
+                <p class="mb-3"> Мы ищем талантливых специалистов из разных областей стоматологии. Заполните форму ниже и мы с вами свяжемся. </p>
+
+
+                <!-- Button to open vertically centered modal -->
+                <button type="button" class="btn btn-mystyle btn-primary w-50" data-bs-toggle="modal" data-bs-target="#modalCentered">
+                  Стать лектором
+                </button>
+
+
             </div>
+
         </div>
 
 
@@ -56,7 +66,9 @@
 
       <div class="modal-body">
         <div class="container">
-            <p class="modal-title fs-1 fw-bold text-center" id="exampleModalLabel"> </p>
+            <p class="modal-title fs-1 fw-bold text-center lh-1 mb-3" id="exampleModalLabel"> Хотите сотрудничать? </p>
+            <p class="modal-title fs-6  text-center lh-1 mb-3" id="exampleModalLabel"> Заполните форму ниже и мы свяжемся с вами</p>
+
           <form>
             <div class="mb-3">
               <input type="text" class="form-control" id="name" placeholder="Имя">
@@ -73,7 +85,7 @@
               <i class="fs-5 fas fa-check-circle"> &nbsp</i>
               <div> Спасибо за заявку, ожидайте звонка </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100" onclick="process_form(event)">Отправить</button>
+            <button type="submit" class="btn btn-mystyle btn-primary w-100" onclick="process_form(event)">Отправить</button>
           </form>
           <p class="mt-3 small">Нажимая на кнопку, я соглашаюсь на <a href="/documents/politika_obrabotki_personalnih_dannih" target="_blank"> обработку персональных данных</a></p>
         </div>
@@ -82,12 +94,6 @@
   </div>
 </div>
 
-   <div class="container">
-        <!-- Button to open vertically centered modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCentered">
-          Открыть окно
-        </button>
-    </div>
 
 
 {% endblock %}

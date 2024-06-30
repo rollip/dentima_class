@@ -3,7 +3,7 @@ var slidesPerView = 5
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
     // Take the user to a different screen here.
-    slidesPerView = 1.5
+    slidesPerView = 1.4
 }
 
 

@@ -8,11 +8,12 @@
 
 
 
-<div class="container my-3" id="submit">
+<div class="container mt-5" id="submit">
     <div class="row">
         <div class="col-md-6 p-md-0">
                 <div class="container d-flex flex-column p-md-5 py-5 px-3 text-white rounded-5 h-100" style="background:#08113c;">
-                   <p class="fs-1 fw-bold mb-3"> Стоимость </p>
+                   <p class="h1 fw-bold"> Стоимость </p>
+
                     <div class="text fs-5">   {{ seminar.pricing|linebreaks }} </div>
                </div>
         </div>
@@ -20,7 +21,9 @@
         <div class="col-md-6 p-0">
             <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
                 <div class="container">
-                    <p class="fw-bold h3 mb-4"> Оставьте заявку: </p>
+                    <p class="h1 fw-bold lh-1 mb-4 "> Оставьте заявку: </p>
+
+
                 <form>
                         {% csrf_token %}
                         <div class="mb-3">

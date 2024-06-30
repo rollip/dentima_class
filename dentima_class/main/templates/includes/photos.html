@@ -1,0 +1,95 @@
+{% load static %}
+
+{% block content %}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!-- LightGallery CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"/>
+
+
+<div class="container my-md-5">
+    <div class="row">
+        <div class="col-md-6 ps-0 ">
+            <div class="d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-10">
+                              <p class="display-5 fw-bold  ">  Фотографии наших мероприятий </p>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-6 ps-0">
+            <div class="ms-3 ms-md-0 swiper mySwiper ">
+                <div class="swiper-wrapper my-4" id="lightgallery">
+
+                    <div class="swiper-slide" style="max-height:40rem;">
+                        <a href="{% static 'img/seminar/photo (1).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (1).jpg' %}" alt="Image 1"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/seminar/photo (2).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (2).jpg' %}" alt="Image 2"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/seminar/photo (3).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (3).jpg' %}" alt="Image 3"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/seminar/photo (4).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (4).jpg' %}" alt="Image 4"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/seminar/photo (5).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (5).jpg' %}" alt="Image 5"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/seminar/photo (6).jpg' %}">
+                            <img src="{% static 'img/seminar/photo (6).jpg' %}" alt="Image 6"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- LightGallery JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+
+<script src="{% static 'js/photos_swiper.js' %}"></script>
+
+<style>
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.2s;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+</style>
+
+{% endblock %}

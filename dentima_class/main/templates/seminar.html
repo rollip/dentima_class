@@ -2,23 +2,24 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/seminar.css' %}" />
-    <script src="{% static 'js/form_processing.js' %} "> </script>
+<link rel="stylesheet" href="{% static 'css/seminar.css' %}"/>
+<script src="{% static 'js/form_processing.js' %} "></script>
 {% endblock %}
 
 
 {% block content %}
 
 
+{% include 'seminar/head.html' %}
+{% include 'seminar/desc_v2.html' %}
 
-    {% include 'seminar/head.html' %}
-    {% include 'seminar/desc_v2.html' %}
+{% include 'seminar/get_pdf.html' %}
 
-    {% include 'seminar/get_pdf.html' %}
-    {% include 'seminar/discount.html' %}
-    {% include 'seminar/price_and_contact.html' %}
+{% include 'seminar/discount.html' %}
+{% include 'includes/photos.html' %}
 
 
+{% include 'seminar/price_and_contact.html' %}
 
 
 {% endblock %}

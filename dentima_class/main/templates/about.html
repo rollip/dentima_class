@@ -2,31 +2,92 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/about.css' %}" />
-<script src="{% static 'js/form_processing.js' %} "> </script>
+<link rel="stylesheet" href="{% static 'css/about.css' %}"/>
+<script src="{% static 'js/form_processing.js' %} "></script>
 {% endblock %}
 
 
 {% block content %}
 
 
-
 <div class="container col-lg-12">
-  <div class="row">
-      <div class='col-md-6 p-0'>
-        <img class='img-fluid object-fit-cover' src="{% static 'img/index_double.jpg' %}" >
-      </div>
+    <div class="row">
+        <div class='col-md-6 p-0'>
+            <img class='img-fluid  rounded-5' src="{% static 'img/index_double.jpg' %}">
+        </div>
 
-      <div class='col-md-6'>
-              <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"> <h1 class="display-4 fw-bold mb-2">Dentima Class</h1>
-          <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов, практических занятий и мастер-классов для стоматологов и зубных техников.</p>
-      </div>
-      </div>
-  </div>
+        <div class='col-md-6'>
+            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"><h1 class="display-4 fw-bold mb-2">
+                Dentima Class</h1>
+                <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов,
+                    практических занятий и мастер-классов для стоматологов и зубных техников.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
+<div class="container col-lg-12">
+    <div class="row">
+        <div class='col-md-6'>
+            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"><h1 class="display-4 fw-bold mb-2">
+                Dentima Class</h1>
+                <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов,
+                    практических занятий и мастер-классов для стоматологов и зубных техников.</p>
+            </div>
+        </div>
 
+
+        <div class='col-md-6 p-0'>
+            <img class='img-fluid  rounded-5' src="{% static 'img/index_double.jpg' %}">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Vertically centered modal -->
+<div class="modal fade" id="modalCentered" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container">
+            <p class="modal-title fs-1 fw-bold text-center" id="exampleModalLabel"> </p>
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Имя">
+            </div>
+            <div class="mb-3">
+              <div class="input-group">
+                <input type="tel" class="form-control" id="phone" placeholder="Телефон">
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Электронная почта">
+            </div>
+            <div id="alert-success" class="alert alert-success d-none" role="alert">
+              <i class="fs-5 fas fa-check-circle"> &nbsp</i>
+              <div> Спасибо за заявку, ожидайте звонка </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" onclick="process_form(event)">Отправить</button>
+          </form>
+          <p class="mt-3 small">Нажимая на кнопку, я соглашаюсь на <a href="/documents/politika_obrabotki_personalnih_dannih" target="_blank"> обработку персональных данных</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <div class="container">
+        <!-- Button to open vertically centered modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCentered">
+          Открыть окно
+        </button>
+    </div>
 
 
 {% endblock %}

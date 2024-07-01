@@ -69,24 +69,32 @@
             <p class="modal-title fs-1 fw-bold text-center lh-1 mb-3" id="exampleModalLabel"> Хотите сотрудничать? </p>
             <p class="modal-title fs-6  text-center lh-1 mb-3" id="exampleModalLabel"> Заполните форму ниже и мы свяжемся с вами</p>
 
-          <form>
-            <div class="mb-3">
-              <input type="text" class="form-control" id="name" placeholder="Имя">
-            </div>
-            <div class="mb-3">
-              <div class="input-group">
-                <input type="tel" class="form-control" id="phone" placeholder="Телефон">
-              </div>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" id="email" placeholder="Электронная почта">
-            </div>
-            <div id="alert-success" class="alert alert-success d-none" role="alert">
-              <i class="fs-5 fas fa-check-circle"> &nbsp</i>
-              <div> Спасибо за заявку, ожидайте звонка </div>
-            </div>
-            <button type="submit" class="btn btn-mystyle btn-primary w-100" onclick="process_form(event)">Отправить</button>
-          </form>
+          <form id="lector-form" class="feedback-form needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" class="form-control name"  placeholder="Имя" required>
+                        <div class="invalid-feedback">Введите имя.</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <input type="tel" class="form-control phone" placeholder="Телефон" required>
+                            <div class="invalid-feedback">Введите телефон.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control email"  placeholder="Электронная почта" required>
+                        <div class="invalid-feedback">Введите электронную почту.</div>
+                    </div>
+
+                    <div id='alert-success' class="alert alert-success d-none" role="alert">
+                        <i class="fs-5 fas fa-check-circle"> &nbsp </i>
+                        <div>Спасибо за заявку, ожидайте звонка</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-mystyle w-100">Отправить</button>
+                </form>
+
+
           <p class="mt-3 small">Нажимая на кнопку, я соглашаюсь на <a href="/documents/politika_obrabotki_personalnih_dannih" target="_blank"> обработку персональных данных</a></p>
         </div>
       </div>

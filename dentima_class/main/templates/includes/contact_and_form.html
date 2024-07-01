@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/includes/contact_and_form.css' %}" />
-<script src="{% static 'js/form_processing.js' %} "> </script>
 
 
 
@@ -14,9 +14,9 @@
                 <div class="container d-flex flex-column p-md-5 py-5 px-3 text-white rounded-5" style="background:#08113c;">
                    <p class="h3 fw-bold"> Контакты </p>
                     <p class="h4  mt-2"> Крым: </p>
-                    <p>+7 (988) 888-88-88 </p>
+                    <p>+7 (978) 742-11-92 </p>
                     <p class="h4 mt-2">Краснодар: </p>
-                    <p>+7 (988) 888-88-88 </p>
+                    <p>+7 (988) 243-40-40</p>
                     <p class="h4  mt-4">Мессенджеры: </p>
                     <div class="d-flex gap-3">
                         <a class='fs-4  contact-button btn p-4' style="background: #229ED9;" href='https://t.me/dentima_class'>
@@ -38,27 +38,31 @@
             <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
                 <div class="container">
                     <p class="fw-bold h3 mb-4"> Оставьте заявку: </p>
-                <form>
-                        {% csrf_token %}
-                        <div class="mb-3">
-                          <input type="text" class="form-control" id="name" placeholder="Имя">
-                        </div>
-                        <div class="mb-3">
-                          <div class="input-group">
-                            <input type="tel" class="form-control" id="phone" placeholder="Телефон">
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <input type="email" class="form-control" id="email" placeholder="Электронная почта">
-                        </div>
 
-                        <div id='alert-success' class="alert alert-success d-none" role="alert" ">
-                            <i class="fs-5 fas fa-check-circle "> &nbsp </i>
-                            <div> Спасибо за заявку, ожидайте звонка </div>
+                <form id="contact-form" class="feedback-form needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" class="form-control name"  placeholder="Имя" required>
+                        <div class="invalid-feedback">Введите имя.</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <input type="tel" class="form-control phone" placeholder="Телефон" required>
+                            <div class="invalid-feedback">Введите телефон.</div>
                         </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control email"  placeholder="Электронная почта" required>
+                        <div class="invalid-feedback">Введите электронную почту.</div>
+                    </div>
 
-                        <button type="submit" class="btn btn-primary btn-mystyle w-100"  onclick="process_form(event)">Отправить</button>
-                    </form>
+                    <div id='alert-success' class="alert alert-success d-none" role="alert">
+                        <i class="fs-5 fas fa-check-circle"> &nbsp </i>
+                        <div>Спасибо за заявку, ожидайте звонка</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-mystyle w-100">Отправить</button>
+                </form>
 
                 <p class="mt-3 small">Нажимая на кнопку, я соглашаюсь на <a href="/documents/politika_obrabotki_personalnih_dannih" target="_blank"> обработку персональных данных</a> </p>
 
@@ -75,5 +79,8 @@
         </div>
     </div>
 </div>
+
+
+<script src="{% static 'js/form_processing.js' %} "> </script>
 
 {% endblock %}

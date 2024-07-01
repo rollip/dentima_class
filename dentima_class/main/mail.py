@@ -13,8 +13,9 @@ def send_email(request):
     email = body['email']
     phone = body['phone']
     page = body['page']
+    form_id = body['form_id']
     subject = 'rollip@yandex.ru'
-    message = f"Запись на семинар: \nСеминар: {page} \nИмя: {name}\nEmail: {email}\nТелефон: {phone}\n"
+    message = f"Запись на семинар: \nСеминар: {page} \nИмя: {name}\nEmail: {email}\nТелефон: {phone}\n Форма: {form_id}\n"
     from_email = 'rollip@yandex.ru'
     recipient_list = ['rollip@yandex.ru']
 

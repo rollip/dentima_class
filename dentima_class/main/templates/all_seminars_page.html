@@ -3,52 +3,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-{% block css %}
-<!-- Banner -->
-<link rel="stylesheet" href="{% static 'css/includes/all_seminars_swiper.css' %}" />
-<link rel="stylesheet" href="{% static 'css/includes/swiper-bundle.min.css' %} "/>
-<link rel="stylesheet" href="{% static 'css/all_seminars_page.css' %}" />
-
-{% endblock %}
-
 {% block content %}
 
+<div class="container p-0">
+
+    <div class="my-5">
+                <p class="h1 fw-bold text-center"> Текущие семинары </p>
+<p class="fs-6 text-center ms-3"> Эти мероприятия предназначены для стоматологов всех уровней, стремящихся повысить свою квалификацию
+    , освоить современные методы лечения, обменяться опытом с коллегами и задать вопросы экспертам. </p>
+
+</div>
 
 
-<!-- Main page banner -->
+</div>
 
-        <div class="container">
-            <p class="h1 text-center fw-bold my-4">Все семинары</p>
-            <div class="d-flex flex-row flex-wrap justify-content-center justify-content-md-start clearfix">
-          <!-- Additional required wrapper -->
-                    {% for seminar in seminars %}
-                    <div class="card card-seminars m-2" style='border-radius:15px; overflow:hidden'>
-                              <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:10rem;'>
-                              <div class="card-body" style='display:flex;flex-direction:column;'>
-                                <p class="h6 card-title"> {{ seminar.name }} </p>
-                                        <div class="lector-wrap">
-                                            <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
-                                        <div class="lector-name my-auto ms-2">{{ seminar.lector.name }}</div>
-                                        </div>
-                                        {% if seminar.lector_2 %}
-                                        <div class="lector-wrap">
-                                            <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
-                                            <div class="lector-name my-auto ms-2">{{ seminar.lector_2.name }}</div>
-                                        </div>
-                                        {% endif %}
-                                <a href="/seminar/{{seminar.slug }}" class="btn btn-primary btn-mystyle" > Подробнее</a>
-                              </div>
-                    
-                        </div>
-                    
-                    
-                    
-                    
-            
-                    {% endfor %}
-            </div>
+{% include 'includes/all_seminars_swiper.html' %}
 
-        </div>
+
+
 
 {% endblock %}

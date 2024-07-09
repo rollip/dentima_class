@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block content %}
+
+
+
+    <div class="container px-3 py-5 p-md-5 rounded-5 " >
+
+        <p class="display-5 mb-3 text-center text-md-start  fw-bold header">Программа</p>
+
+
+            <div class="rounded-5">
+                {{ seminar.full_desc|safe|linebreaks }}
+            </div>
+
+    </div>
+
+ {% endblock %}

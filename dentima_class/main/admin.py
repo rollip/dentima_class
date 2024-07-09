@@ -20,7 +20,13 @@ class SeminarAdmin(admin.ModelAdmin):
 @admin.register(SeminarArchive)
 class SeminarArchiveAdmin(admin.ModelAdmin):
     list_display = ('name', 'start_date', 'end_date', 'lector', 'lector_2')
-    pass
+
+    @admin.action(description="Восстановить семинар")
+    def restore(self, request, queryset):
+        for seminar in queryset:
+            seminar.restore()
+
+    actions = [restore]
 
 '''
 

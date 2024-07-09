@@ -10,37 +10,25 @@
 {% block content %}
 
 
-<div class="container col-lg-12">
-    <div class="row">
-        <div class='col-md-6 p-0'>
-            <img class='img-fluid  rounded-5' src="{% static 'img/index_double.jpg' %}">
-        </div>
-
-        <div class='col-md-6'>
-            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"><h1 class="display-4 fw-bold mb-2">
-                Dentima Class</h1>
-                <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов,
-                    практических занятий и мастер-классов для стоматологов и зубных техников.</p>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'about/reviews2.html' %}
 
 
 <div class="container col-lg-12">
     <div class="row">
         <div class='col-md-6'>
             <div class=" container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3">
-                <h1 class="display-5 fw-bold mb-2 lh-1 mb-4"> Сотрудничество </h1>
+                <h1 class="display-5 fw-bold mb-2 lh-1 mb-4  "> Сотрудничество </h1>
 
 
                 <p class="mb-3"> Мы ищем талантливых специалистов из разных областей стоматологии. Заполните форму ниже и мы с вами свяжемся. </p>
 
 
-                <!-- Button to open vertically centered modal -->
-                <button type="button" class="btn btn-mystyle btn-primary w-50" data-bs-toggle="modal" data-bs-target="#modalCentered">
-                  Стать лектором
-                </button>
+                    <!-- Button to open vertically centered modal -->
+                    <button type="button" class="btn btn-mystyle btn-primary w-50 mt-1" data-bs-toggle="modal" data-bs-target="#modalCentered">
+                      Стать лектором
+                    </button>
+
+
 
 
             </div>
@@ -49,7 +37,9 @@
 
 
         <div class='col-md-6 p-0'>
-            <img class='img-fluid  rounded-5' src="{% static 'img/index_double.jpg' %}">
+            <div class="container">
+                <img class='img-fluid  rounded-5' src="{% static 'img/about/ab_2.jpg' %}">
+            </div>
         </div>
 
     </div>
@@ -91,7 +81,7 @@
                         <div>Спасибо за заявку, ожидайте звонка</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-mystyle w-100">Отправить</button>
+                    <button type="submit" class="btn btn-primary btn-mystyle w-100 ">Отправить</button>
                 </form>
 
 

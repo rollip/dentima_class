@@ -1,35 +1,15 @@
-
-
-
-{% load static %}
-
 {% block content %}
 
 
 
-
-
-
-
-<div class="container my-5">
-
-    <div class="row">
-
-                        <div class='col-md-7'>
-                    <div class="container   rounded-5 ">
-                        <p class="text-center fs-2 mb-4 fw-bold"> Описание </p>
-                        <p class="">{{ seminar.short_desc|linebreaks }}</p>
-                    </div>
-
-                </div>
-
-
-
-
-
-
-
-                <div class='col-md-5 mt-5 mt-md-0' >
+    <div class="container px-3 py-5 p-md-5 rounded-5 " >
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-center text-md-start fw-bold display-5 mb-3">
+                    Лекторы
+                </p>
+            </div>
+                <div class='col-md-6 ' >
 
                     {% for lector in lectors %}
                 <div class="rounded-5 mb-4 bg-light" >
@@ -84,12 +64,7 @@
 
                 </div>
 
-
-
-            </div>
+        </div>
     </div>
 
-
-
-
-{% endblock %}
+ {% endblock %}

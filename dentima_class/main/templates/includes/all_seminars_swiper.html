@@ -37,14 +37,20 @@
                           <img src="{{ seminar.image.url }}" class="card-img-top" alt="..." style='height:15rem;'>
                           <div class="card-body" style='display:flex;flex-direction:column;'>
                             <a href="/seminar/{{ seminar.slug }}" class="text-reset fs-6 fs-md-5 fw-bold"> {{ seminar.name }} </a>
-                                    <div class="lector-wrap mt-auto">
-                                        <img src="{{ seminar.lector.image.url }}" class="rounded-circle">
-                                    <a href="lector/{{ seminar.lector.slug }}" class="text-reset my-auto ms-2">{{ seminar.lector.name }}</a>
+                                    <div class="lector-wrap mt-auto ">
+                                        <div class="rounded-5 overflow-hidden" style="width:2.5rem;height:2.5rem">
+                                            <img src="{{ seminar.lector.image.url }}" class="img-fluid ">
+                                        </div>
+
+                                        <a class="text-reset my-auto ms-2">{{ seminar.lector.name }}</a>
                                     </div>
                                     {% if seminar.lector_2 %}
-                                    <div class="lector-wrap">
-                                        <img src="{{ seminar.lector_2.image.url }}" class="rounded-circle">
-                                         <a href="lector/{{ seminar.lector_2.slug }}" class="text-reset my-auto ms-2">{{ seminar.lector_2.name }}</a>
+                                    <div class="lector-wrap mt-auto ">
+                                        <div class="rounded-5 overflow-hidden" style="width:2.5rem;height:2.5rem">
+                                            <img src="{{ seminar.lector_2.image.url }}" class="img-fluid ">
+                                        </div>
+
+                                        <a class="text-reset my-auto ms-2">{{ seminar.lector_2.name }}</a>
                                     </div>
                                     {% endif %}
                             <a href="/seminar/{{ seminar.slug }}" class="btn btn-primary btn-mystyle rounded-5 mt-3" > Подробнее</a>

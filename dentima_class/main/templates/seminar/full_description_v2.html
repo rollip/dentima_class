@@ -3,16 +3,9 @@
 {% block content %}
 
 
+<div class="container  rounded-5">
+    <p class="display-5 ps-5 mb-5 text-center text-md-start  fw-bold header">Программа</p>
+    {{ seminar.full_desc|safe|linebreaks }}
+</div>
 
-    <div class="container px-3 py-5 p-md-5 rounded-5 " >
-
-        <p class="display-5 mb-3 text-center text-md-start  fw-bold header">Программа</p>
-
-
-            <div class="rounded-5">
-                {{ seminar.full_desc|safe|linebreaks }}
-            </div>
-
-    </div>
-
- {% endblock %}
+{% endblock %}

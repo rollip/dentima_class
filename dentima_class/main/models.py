@@ -104,3 +104,15 @@ class SeminarArchive(SeminarAbstract):
         db_table = 'seminar_archive'
         verbose_name = 'Cеминары архив'
         verbose_name_plural = 'Cеминары архив'
+
+
+class Show(models.Model):
+    title = models.CharField(max_length=1024)
+    slug = models.SlugField(max_length=1024)
+
+
+class ShowPhoto(models.Model):
+    show = models.ForeignKey(
+        Show, on_delete=models.CASCADE, related_name="photos"
+    )
+    photo = models.ImageField()

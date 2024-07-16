@@ -56,6 +56,8 @@ def seminar(request, seminar_slug=None):
         return render(request, 'seminar.html',context)
 
 
+def archive(request):
+    return render(request, 'archive.html')
 
 def contact(request):
     return render(request, 'contact.html')
@@ -65,14 +67,14 @@ def about(request):
     return render(request, 'about.html')
 
 def documents(request, document_slug=None):
-    if document_slug is None:
-        return HttpResponse('404')
-    elif document_slug == 'politika_obrabotki_personalnih_dannih':
+    if document_slug == 'politika_obrabotki_personalnih_dannih':
         return render(request, 'documents/politika_obrabotki_personalnih_dannih.html')
     elif document_slug == 'dogovor_oferta':
         return render(request, 'documents/dogovor_oferta.html')
     elif document_slug == 'credentials':
         return render(request, 'documents/credentials.html')
+    else    :
+        return HttpResponse('404')
 
 
 

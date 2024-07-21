@@ -1,9 +1,16 @@
 from django.contrib import admin
 from .models import  Lector, Seminar, SeminarArchive
 # Register your models here.
+from .models import Block, Seminar
 
-#admin.site.register(Lector)
-#admin.site.register(Seminar)
+@admin.register(Block)
+class BlockAdmin(admin.ModelAdmin):
+    list_display = ('title', 'seminar')
+    search_fields = ('title', 'content')
+
+class BlockInline(admin.StackedInline):
+    model = Block
+    extra = 1
 
 @admin.register(Lector)
 class LectorAdmin(admin.ModelAdmin):
@@ -13,6 +20,7 @@ class LectorAdmin(admin.ModelAdmin):
 class SeminarAdmin(admin.ModelAdmin):
     list_display = ('name', 'start_date', 'end_date', 'lector', 'lector_2')
     prepopulated_fields = {'slug': ('name',)}
+    inlines = [BlockInline]
     def delete_queryset(self, request, queryset):
         for seminar in queryset:
             seminar.delete()
@@ -28,11 +36,4 @@ class SeminarArchiveAdmin(admin.ModelAdmin):
 
     actions = [restore]
 
-'''
 
-
-    list_display = ('name', 'start_date', 'end_date', 'lector', 'lector_2')
-    search_fields = ('name', 'address', 'description')
-
-
-'''

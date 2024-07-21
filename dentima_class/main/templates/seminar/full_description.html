@@ -6,20 +6,40 @@
 
 
 
-    <div class="container my-4    justify-content-center flex-column rounded-5 " >
+    <div class="container " >
+        <div class="my-4 p-md-5 py-5 px-3  justify-content-center flex-column rounded-5 bg-light">
+        <p class="display-5 text-md-start text-center  fw-bold mb-5"> Программа  курса </p>
 
-    <button class="btn collapse-button collapsed d-flex align-items-center justify-content-center w-100 p-4  rounded-5 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProgram" aria-expanded="false" aria-controls="collapseProgram" >
-        <p class="fs-2   fw-bold header">Программа</p>
+        <div class="rounded-5 overflow-hidden">
+        <div class="accordion" id="accordionExample">
+            {% for block in seminar.blocks.all %}
+          <div class="bg-white">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <div class="accordion-button bg-white p-4  " type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                  <div class="d-flex my-3">
+                      <p class="my-auto fs-5" > {{ forloop.counter }}. {{ block.title|safe |linebreaksbr  }} </p>
+                  </div>
 
-        <div class="bg-light rounded-circle p-3 d-flex align-items-center justify-content-center mx-4" style="height:3rem;width:3rem;"> <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-    </button>
 
-    <div class="collapse pb-3 p-md-5 " id="collapseProgram">
-            <div class="text container  rounded-5   ">
-                {{ seminar.description|safe|linebreaks }}
+              </div>
+            </h2>
+            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample" >
+              <div class="accordion-body">
+                 {{ block.content | safe | linebreaks  }}
+              </div>
             </div>
+          </div>
+            {% endfor %}
+    </div>
+        </div>
+    </div>
     </div>
 
-    </div>
 
+ <style>
+     .accordion li
+     {
+     margin-bottom:10px;
+     }
+ </style>
  {% endblock %}

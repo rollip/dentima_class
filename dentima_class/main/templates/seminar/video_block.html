@@ -3,10 +3,10 @@
 {% block content %}
 {% if seminar.video_url %}
 <div class="container">
-    <p class="text-center text-md-start p-md-5 px-5 py-3 fw-bold display-5"> Видео </p>
+    <!-- <p class="text-center text-md-start mb-4 fw-bold display-6"> Видео </p> -->
     <div class="col-md-12">
 <div class="ratio ratio-16x9 rounded-5 overflow-hidden">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b4D-t3NmBXI?rel=0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
 </div>
 
 

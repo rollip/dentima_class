@@ -3,8 +3,20 @@ from django.shortcuts import render
 from .mail import *
 from .models import Lector,Seminar
 
+import re
+
 # Create your views here.
 #     lectors = Lector.objects.all() 'lectors' : lectors,
+
+
+def extract_youtube_id(url):
+    # Регулярное выражение для извлечения ID видео из URL
+    pattern = re.compile(r'(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})')
+    match = pattern.search(url)
+    return match.group(1) if match else None
+
+
+
 def index(request):
     seminars = Seminar.objects.all()
     lectors = Lector.objects.all()
@@ -46,13 +58,20 @@ def seminar(request, seminar_slug=None):
             if seminar.lector_2:
                 lectors.append(seminar.lector_2)
 
+
         except Seminar.DoesNotExist:
             return HttpResponse('404')
 
         context = {
                 'seminar': seminar,
                 'lectors': lectors,
+
             }
+
+        if seminar.video_url:
+            video_id = extract_youtube_id(seminar.video_url)
+            context['video_id'] = video_id
+
         return render(request, 'seminar.html',context)
 
 
@@ -85,3 +104,5 @@ def mail(request):
 
 def in_dev(request):
     return render(request, 'in_dev.html')
+
+

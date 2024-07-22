@@ -7,28 +7,28 @@
 
         <div class="col-md-12">
                 <div class="container">
-            <div class="my-4  py-5   justify-content-center flex-column rounded-5 ">
+            <div class="my-4  py-5   justify-content-center flex-column  ">
                 <p class="display-6 text-md-start text-center  fw-bold mb-5"> Программа курса </p>
 
-                <div class="rounded-5 overflow-hidden">
-                    <div class="accordion" id="accordionExample">
+                <div class=" ">
+                    <div class="accordion accordion-flush" id="accordionExample">
                         {% for block in seminar.blocks.all %}
-                        <div class="bg-white">
+                        <div class="bg-white my-3 rounded-5 overflow-hidden">
                             <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-                                <div class="accordion-button bg-white p-md-4 p-3  " type="button"
+                                <div class="accordion-button bg-white p-md-4 p-3 {% if not forloop.first %}collapsed{% endif %}" type="button"
                                      data-bs-toggle="collapse"
                                      data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true"
                                      aria-controls="collapse{{ forloop.counter }}">
                                     <div class="d-flex my-3">
-                                        <p class="my-auto text-break"> {{ forloop.counter }}. {{ block.title|safe |linebreaksbr }} </p>
+                                        <p class="my-auto text-break fw-bold"> {{ forloop.counter }}. {{ block.title|safe |linebreaksbr }} </p>
                                     </div>
 
 
                                 </div>
                             </h2>
-                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show"
+                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
                                  aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
-                                <div class="accordion-body text-break">
+                                <div class="accordion-body text-break ">
                                     {{ block.content | safe }}
                                 </div>
                             </div>

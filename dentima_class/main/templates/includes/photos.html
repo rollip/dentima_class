@@ -75,6 +75,11 @@
 
 </div>
 
+
+{% endblock %}
+
+
+{% block scripts %}
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- LightGallery JS -->
@@ -83,6 +88,13 @@
 <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
 
 <script src="{% static 'js/photos_swiper.js' %}"></script>
+
+{% endblock %}
+
+
+
+{% block css %}
+
 
 <style>
     .swiper-slide img {
@@ -97,3 +109,5 @@
 </style>
 
 {% endblock %}
+
+

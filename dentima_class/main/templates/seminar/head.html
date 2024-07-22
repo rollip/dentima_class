@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
 <div class="py-5 bg-light" style="background:#D2EFFC">
 
 
@@ -62,7 +63,7 @@
 
 
                         </div>
-                        <a class="rounded-5 text-reset  btn btn-primary btn-mystyle mt-md-auto mt-4 " href='#price-form'
+                        <a class="rounded-5 text-reset  btn btn-primary btn-mystyle mt-md-auto mt-4 " onclick="scrollToElement('price-form')"
                            style="background:#a4c639">
                             <div class="text-white  fs-5">Записаться</div>
                         </a>
@@ -77,5 +78,22 @@
     </div>
 
 </div>
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+
+<script>
+function scrollToElement(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+</script>
 
 {% endblock %}

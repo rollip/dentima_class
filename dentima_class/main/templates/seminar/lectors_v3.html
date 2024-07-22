@@ -2,16 +2,14 @@
 
 {% for lector in lectors %}
 
-<div class="container ">
+<div class="container my-5 ">
 
-        <div class="container bg-light p-md-5 px-1 py-3 rounded-5">
+        <div class="container bg-light rounded-5">
 
-
-            <div class=" " >
 
                 <div class="row">
 
-                <div class="col-md-5 ms-auto">
+                <div class="col-md-5 ms-auto p-0 p-md-5">
 
                     {% if lector.image %}
                     <img class="img-fluid rounded-5 " src="{{ lector.image.url }}">
@@ -29,7 +27,7 @@
             </div>
         </div>
     </div>
-</div>
+
 {% endfor %}
 {% endblock %}
 

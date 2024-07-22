@@ -1,0 +1,9 @@
+.ck-content {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Apply Montserrat font to other text input fields */
+input[type="text"],
+textarea {
+    font-family: 'Montserrat', sans-serif;
+}

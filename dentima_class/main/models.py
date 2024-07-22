@@ -1,11 +1,7 @@
 from django.db import models
-from django.db.models.signals import pre_delete
-from django.dispatch import receiver
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
-from ckeditor.fields import RichTextField
 from django.utils.text import slugify
-
 
 class Lector(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name='Имя')
@@ -15,7 +11,7 @@ class Lector(models.Model):
                               null=True, verbose_name='Фотография', help_text='соотношение сторон - квадрат',
                               validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])])
     specialization = models.CharField(max_length=100, default='стоматолог', verbose_name='Специализация')
-    desc = RichTextField()
+    content = models.TextField()
 
     class Meta:
         db_table = 'lector'
@@ -29,7 +25,6 @@ class Lector(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class SeminarAbstract(models.Model):
 
@@ -51,8 +46,8 @@ class SeminarAbstract(models.Model):
     lector_2 = models.ForeignKey(to='Lector', on_delete=models.PROTECT, related_name='%(class)s_lector_2', blank=True,
                                  null=True, default=None, verbose_name='Лектор 2')
     address = models.CharField(max_length=100, verbose_name='Адрес')
-    short_desc = RichTextField()
-    pricing = RichTextField()
+    short_desc = models.TextField()
+    pricing = models.TextField()
 
     class Meta:
         abstract = True
@@ -64,7 +59,6 @@ class SeminarAbstract(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Seminar(SeminarAbstract):
 
@@ -97,7 +91,6 @@ class Seminar(SeminarAbstract):
         db_table = 'seminar'
         verbose_name = 'Семинар'
         verbose_name_plural = 'Семинары'
-
 
 class SeminarArchive(SeminarAbstract):
 
@@ -134,15 +127,11 @@ class SeminarArchive(SeminarAbstract):
         verbose_name = 'Семинары архив'
         verbose_name_plural = 'Семинары архив'
 
-
 class Block(models.Model):
     title = models.CharField(max_length=200, verbose_name="Заголовок")
-    content = RichTextField()
+    content = models.TextField()
     seminar = models.ForeignKey(Seminar, related_name='blocks', on_delete=models.CASCADE, null=True, blank=True, verbose_name="Семинар")
     seminar_archive = models.ForeignKey(SeminarArchive, related_name='blocks', on_delete=models.CASCADE, null=True, blank=True, verbose_name="Семинар Архив")
-
-    def __str__(self):
-        return self.title
 
 
 class Tag(models.Model):
@@ -152,3 +141,4 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.text
+

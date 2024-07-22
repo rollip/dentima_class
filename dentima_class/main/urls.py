@@ -2,6 +2,7 @@ from django.urls import path
 from main import views
 from django.conf.urls.static import static
 from dentima_class import settings
+from django.urls import include, path
 
 urlpatterns = [
     path('', views.index),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('contact/', views.contact),
     path('send_email', views.mail),
     path('documents/<document_slug>', views.documents),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 
 
 ]

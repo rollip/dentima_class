@@ -1,40 +1,39 @@
 from django.db import models
-
 from django.db.models.signals import pre_delete
-from django.dispatch.dispatcher import receiver
+from django.dispatch import receiver
 from django.core.validators import FileExtensionValidator
-
-
-# Create your models here.
+from django.core.exceptions import ValidationError
+from ckeditor.fields import RichTextField
+from django.utils.text import slugify
 
 
 class Lector(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name='Имя')
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True,
-                            verbose_name=' Часть ссылки (автозаполняется)')
+                            verbose_name='Часть ссылки (автозаполняется)')
     image = models.ImageField(upload_to='lector/images', default='lector/images/empty_lector.jpg', blank=True,
-                              null=True, verbose_name='Фотография', help_text='соотношение сторон - квадрат')
+                              null=True, verbose_name='Фотография', help_text='соотношение сторон - квадрат',
+                              validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])])
     specialization = models.CharField(max_length=100, default='стоматолог', verbose_name='Специализация')
-    short_desc = models.TextField(max_length=1000, verbose_name='Короткое описание', help_text='<1000 символов')
-    long_desc = models.TextField(max_length=10000,
-                                 verbose_name='Полное описание ',
-                                 help_text='<10000 символов')
+    desc = RichTextField()
 
     class Meta:
         db_table = 'lector'
         verbose_name = 'Лектор'
         verbose_name_plural = 'Лекторы'
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.name
-
-
 
 
 class SeminarAbstract(models.Model):
 
     def clean(self):
-        from django.core.exceptions import ValidationError
         if self.start_date > self.end_date:
             raise ValidationError('Дата окончания не может быть раньше даты начала')
 
@@ -42,7 +41,8 @@ class SeminarAbstract(models.Model):
     slug = models.SlugField(max_length=250, unique=True, blank=True, null=True,
                             verbose_name='Часть ссылки (автозаполняется)')
     image = models.ImageField(upload_to='seminar/image', default='seminar/images/empty_seminar.jpg', blank=True,
-                              null=True, verbose_name='Картинка')
+                              null=True, verbose_name='Картинка',
+                              validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])])
     video_url = models.URLField(null=True, blank=True, verbose_name="Ссылка на видео YouTube")
     start_date = models.DateField(verbose_name='Начало')
     end_date = models.DateField(verbose_name='Окончание')
@@ -51,22 +51,25 @@ class SeminarAbstract(models.Model):
     lector_2 = models.ForeignKey(to='Lector', on_delete=models.PROTECT, related_name='%(class)s_lector_2', blank=True,
                                  null=True, default=None, verbose_name='Лектор 2')
     address = models.CharField(max_length=100, verbose_name='Адрес')
-    type = models.CharField(max_length=50, default='лекция', verbose_name='лекция/практика')
-    food = models.CharField(max_length=50, default='кофе-брейк', verbose_name='обед/кофе-брейк')
-    short_desc = models.TextField(max_length=10000,
-                                 verbose_name='Короткое Описание')
-    pricing = models.TextField(max_length=3000, verbose_name='Стоимость')
+    short_desc = RichTextField()
+    pricing = RichTextField()
 
     class Meta:
         abstract = True
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
 
 
 class Seminar(SeminarAbstract):
+
     def delete(self):
-        SeminarArchive.objects.create(
+        seminar_archive = SeminarArchive.objects.create(
             name=self.name,
             slug=self.slug,
             image=self.image,
@@ -75,12 +78,19 @@ class Seminar(SeminarAbstract):
             lector=self.lector,
             lector_2=self.lector_2,
             address=self.address,
-            type=self.type,
-            food=self.food,
-            full_desc=self.full_desc,
             short_desc=self.short_desc,
             pricing=self.pricing,
         )
+        for block in self.blocks.all():
+            block.pk = None
+            block.seminar = None
+            block.seminar_archive = seminar_archive
+            block.save()
+        for tag in self.tags.all():
+            tag.pk = None
+            tag.seminar = None
+            tag.seminar_archive = seminar_archive
+            tag.save()
         super().delete()
 
     class Meta:
@@ -90,11 +100,12 @@ class Seminar(SeminarAbstract):
 
 
 class SeminarArchive(SeminarAbstract):
+
     def delete(self):
         pass
 
     def restore(self):
-        Seminar.objects.create(
+        seminar = Seminar.objects.create(
             name=self.name,
             slug=self.slug,
             image=self.image,
@@ -103,23 +114,41 @@ class SeminarArchive(SeminarAbstract):
             lector=self.lector,
             lector_2=self.lector_2,
             address=self.address,
-            type=self.type,
-            food=self.food,
-            full_desc=self.full_desc,
             short_desc=self.short_desc,
             pricing=self.pricing,
         )
+        for block in self.blocks.all():
+            block.pk = None
+            block.seminar = seminar
+            block.seminar_archive = None
+            block.save()
+        for tag in self.tags.all():
+            tag.pk = None
+            tag.seminar = seminar
+            tag.seminar_archive = None
+            tag.save()
         super().delete()
 
     class Meta:
         db_table = 'seminar_archive'
-        verbose_name = 'Cеминары архив'
-        verbose_name_plural = 'Cеминары архив'
+        verbose_name = 'Семинары архив'
+        verbose_name_plural = 'Семинары архив'
+
 
 class Block(models.Model):
     title = models.CharField(max_length=200, verbose_name="Заголовок")
-    content = models.TextField(verbose_name="Текст")
-    seminar = models.ForeignKey(Seminar, related_name='blocks', on_delete=models.CASCADE, verbose_name="Семинар")
+    content = RichTextField()
+    seminar = models.ForeignKey(Seminar, related_name='blocks', on_delete=models.CASCADE, null=True, blank=True, verbose_name="Семинар")
+    seminar_archive = models.ForeignKey(SeminarArchive, related_name='blocks', on_delete=models.CASCADE, null=True, blank=True, verbose_name="Семинар Архив")
 
     def __str__(self):
         return self.title
+
+
+class Tag(models.Model):
+    text = models.CharField(max_length=20, verbose_name="Тэг")
+    seminar = models.ForeignKey(Seminar, related_name='tags', on_delete=models.CASCADE, null=True, blank=True)
+    seminar_archive = models.ForeignKey(SeminarArchive, related_name='tags', on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.text

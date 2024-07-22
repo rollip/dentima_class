@@ -5,27 +5,27 @@
 {% block content %}
 
 
+<div class="bg-light">
 
-    <div class="container " >
-        <div class="my-4 p-md-5 py-5 px-3  justify-content-center flex-column rounded-5 bg-light">
-        <p class="display-5 text-md-start text-center  fw-bold mb-5"> Программа  курса </p>
+        <div class="my-4 p-md-5 py-5 px-3  justify-content-center flex-column rounded-5 ">
+        <p class="display-6 text-md-start text-center  fw-bold mb-5"> Программа  курса </p>
 
         <div class="rounded-5 overflow-hidden">
         <div class="accordion" id="accordionExample">
             {% for block in seminar.blocks.all %}
           <div class="bg-white">
             <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-              <div class="accordion-button bg-white p-4  " type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+              <div class="accordion-button bg-white p-md-4 p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
                   <div class="d-flex my-3">
-                      <p class="my-auto fs-5" > {{ forloop.counter }}. {{ block.title|safe |linebreaksbr  }} </p>
+                      <p class="my-auto text-break" > {{ forloop.counter }}. {{ block.title|safe |linebreaksbr  }} </p>
                   </div>
 
 
               </div>
             </h2>
             <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample" >
-              <div class="accordion-body">
-                 {{ block.content | safe | linebreaks  }}
+              <div class="accordion-body text-break">
+                 {{ block.content | safe   }}
               </div>
             </div>
           </div>
@@ -33,13 +33,6 @@
     </div>
         </div>
     </div>
-    </div>
 
-
- <style>
-     .accordion li
-     {
-     margin-bottom:10px;
-     }
- </style>
+</div>
  {% endblock %}

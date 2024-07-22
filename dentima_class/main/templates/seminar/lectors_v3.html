@@ -1,0 +1,40 @@
+{% block content %}
+
+{% for lector in lectors %}
+
+<div class="container ">
+
+        <div class="container bg-light p-md-5 px-1 py-3 rounded-5">
+
+
+            <div class=" " >
+
+                <div class="row">
+
+                <div class="col-md-5 ms-auto">
+
+                    {% if lector.image %}
+                    <img class="img-fluid rounded-5 " src="{{ lector.image.url }}">
+                    {% endif %}
+
+                </div>
+
+                <div class="col-md-7 me-auto">
+                    <div class="container rounded-5 p-5 px-3 py-5 ">
+                            <p class="fw-bold fs-2"> {{ lector.name }} </p>
+                            <p class=" mb-3"> {{ lector.specialization }} </p>
+                            <p  {{ lector.desc| safe |linebreaks }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+

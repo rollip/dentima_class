@@ -1,37 +1,7 @@
 from django.contrib import admin
-from django import forms
-from django_ckeditor_5.widgets import CKEditor5Widget
-from .models import Lector, Seminar, SeminarArchive, Block, Tag
+from .forms import *
 
 # Define admin form classes with CKEditor5
-class LectorAdminForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-
-    class Meta:
-        model = Lector
-        fields = '__all__'
-
-class SeminarAdminForm(forms.ModelForm):
-    short_desc = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-    pricing = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-
-    class Meta:
-        model = Seminar
-        fields = '__all__'
-
-class SeminarArchiveAdminForm(forms.ModelForm):
-    short_desc = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-    pricing = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-
-    class Meta:
-        model = SeminarArchive
-        fields = '__all__'
-
-class BlockAdminForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditor5Widget(config_name='default'))
-    class Meta:
-        model = Block
-        fields = '__all__'
 
 # Inline classes for Block and Tag
 class BlockInline(admin.StackedInline):
@@ -42,6 +12,7 @@ class BlockInline(admin.StackedInline):
 class TagInline(admin.StackedInline):
     model = Tag
     extra = 0
+
 
 # Register Lector with custom form
 @admin.register(Lector)

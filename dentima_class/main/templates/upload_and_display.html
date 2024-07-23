@@ -1,0 +1,32 @@
+<!-- fileuploads/templates/upload_and_display.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload and Display Files</title>
+</head>
+<body>
+    <h2>Upload and Display Files</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <h3>Uploaded Files:</h3>
+
+    {% for album in albums %}
+        <ul> <a>{{ album.title }}</a>
+        {% for photo in album.photos.all %}
+            <li><a href="{{ photo.photo.url }}"> Фото {{ forloop.counter }}</a></li>
+        {% endfor %}
+            </ul>
+    {% empty %}
+        <ul>No files uploaded yet.</ul>
+
+    {% endfor %}
+
+
+</body>
+</html>

@@ -1,7 +1,10 @@
-from django.http import HttpResponse
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
+
+from .forms import ArchiveAlbumForm
 from .mail import *
-from .models import Lector,Seminar
+from .models import Lector, Seminar, ArchiveAlbum, ArchivePhoto
+from django.shortcuts import redirect
 
 import re
 
@@ -92,7 +95,7 @@ def documents(request, document_slug=None):
         return render(request, 'documents/dogovor_oferta.html')
     elif document_slug == 'credentials':
         return render(request, 'documents/credentials.html')
-    else    :
+    else:
         return HttpResponse('404')
 
 
@@ -106,3 +109,19 @@ def in_dev(request):
     return render(request, 'in_dev.html')
 
 
+@staff_member_required
+def upload_and_display_files(request):
+    albums = ArchiveAlbum.objects.all()
+
+    if request.method == 'POST':
+        form = ArchiveAlbumForm(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            album = ArchiveAlbum.objects.create(title=title)
+            for photo in request.FILES.getlist('photos'):
+                ArchivePhoto.objects.create(album=album, photo=photo)
+            return redirect('upload_and_display')
+    else:
+        form = ArchiveAlbumForm()
+
+    return render(request, 'upload_and_display.html', {'form': form, 'albums': albums})

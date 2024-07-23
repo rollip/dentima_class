@@ -13,8 +13,8 @@ urlpatterns = [
     path('contact/', views.contact),
     path('send_email', views.mail),
     path('documents/<document_slug>', views.documents),
+    path('upload', views.upload_and_display_files, name='upload_and_display'),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
-
 
 ]
 

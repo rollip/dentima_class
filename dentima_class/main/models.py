@@ -142,3 +142,17 @@ class Tag(models.Model):
     def __str__(self):
         return self.text
 
+
+
+class ArchiveAlbum(models.Model):
+    title = models.TextField(verbose_name='Название альбома')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+class ArchivePhoto(models.Model):
+    album = models.ForeignKey(ArchiveAlbum, related_name='photos', on_delete=models.CASCADE, verbose_name='Альбом')
+    photo = models.FileField(upload_to='uploads/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .forms import *
+from .models import  *
 
 # Define admin form classes with CKEditor5
 
@@ -13,6 +14,10 @@ class TagInline(admin.StackedInline):
     model = Tag
     extra = 0
 
+
+class ArchivePhotoInline(admin.StackedInline):
+    model = ArchivePhoto
+    extra = 0  # Number of extra forms to display
 
 # Register Lector with custom form
 @admin.register(Lector)
@@ -45,3 +50,8 @@ class SeminarArchiveAdmin(admin.ModelAdmin):
             seminar.restore()
 
     actions = [restore]
+
+
+@admin.register(ArchiveAlbum)
+class ArchiveAlbumAdmin(admin.ModelAdmin):
+    inlines = [ArchivePhotoInline]

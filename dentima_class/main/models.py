@@ -10,7 +10,7 @@ class Lector(models.Model):
     image = models.ImageField(upload_to='lector/images', default='lector/images/empty_lector.jpg', blank=True,
                               null=True, verbose_name='Фотография', help_text='соотношение сторон - квадрат',
                               validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])])
-    specialization = models.CharField(max_length=100, default='стоматолог', verbose_name='Специализация')
+    specialization = models.CharField(max_length=300, default='стоматолог', verbose_name='Специализация')
     content = models.TextField()
 
     class Meta:

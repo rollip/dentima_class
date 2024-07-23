@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
 from django.utils.text import slugify
+import os
 
 class Lector(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name='Имя')
@@ -142,17 +143,18 @@ class Tag(models.Model):
     def __str__(self):
         return self.text
 
-
+def get_upload_path(instance,filename):
+    return os.path.join('uploads', 'archive', instance.title, filename)
 
 class ArchiveAlbum(models.Model):
     title = models.TextField(verbose_name='Название альбома')
     uploaded_at = models.DateTimeField(auto_now_add=True)
-
+    photo_cover = models.ImageField(upload_to=get_upload_path, verbose_name='Обложка')
     def __str__(self):
         return self.title
 
 
 class ArchivePhoto(models.Model):
     album = models.ForeignKey(ArchiveAlbum, related_name='photos', on_delete=models.CASCADE, verbose_name='Альбом')
-    photo = models.FileField(upload_to='uploads/')
+    photo = models.FileField(upload_to='uploads/archive/')
     uploaded_at = models.DateTimeField(auto_now_add=True)

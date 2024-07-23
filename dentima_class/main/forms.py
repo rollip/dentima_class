@@ -49,7 +49,6 @@ class MultipleFileField(forms.FileField):
         return result
 
 class ArchiveAlbumForm(forms.ModelForm):
-
     photos = MultipleFileField()
     class Meta:
         model = ArchiveAlbum

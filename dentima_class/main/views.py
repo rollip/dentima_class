@@ -116,12 +116,13 @@ def upload_and_display_files(request):
     if request.method == 'POST':
         form = ArchiveAlbumForm(request.POST, request.FILES)
         if form.is_valid():
-            title = form.cleaned_data['title']
-            album = ArchiveAlbum.objects.create(title=title)
+            # Save the form and get the instance
+            album = form.save()
+            # Save additional photos if any
             for photo in request.FILES.getlist('photos'):
                 ArchivePhoto.objects.create(album=album, photo=photo)
             return redirect('upload_and_display')
     else:
         form = ArchiveAlbumForm()
 
-    return render(request, 'upload_and_display.html', {'form': form, 'albums': albums})
+    return render(request, 'upload.html', {'form': form, 'albums': albums})

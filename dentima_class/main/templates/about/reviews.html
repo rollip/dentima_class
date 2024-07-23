@@ -2,23 +2,96 @@
 
 {% block content %}
 
-<div class="container col-lg-12 my-5">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!-- LightGallery CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"/>
+
+
+<div class="container mb-md-5 my-md-5">
     <div class="row">
-        <div class='col-md-6'>
-            <div class="container-fluid h-100 d-flex flex-column p-md-5 py-5 px-3"><h1 class="display-4 fw-bold mb-2">
-                Отзывы</h1>
-                <p class="mb-3">Организация и проведение профессиональных семинаров, конгрессов, конференций, тренингов,
-                    практических занятий и мастер-классов для стоматологов и зубных техников.</p>
+            <div class="col-md-6  ">
+                <div class="rounded-5 p-md-5 p-3 h-100 ps-md-0">
+                <p class="display-5 fw-bold mb-3 "> Отзывы </p>
+                <p class=" "> Мы проводим различные стоматологические мероприятия, ориентированные на повышение
+                    квалификации стоматологов
+                    Это мастер-классы, семинары, лекции и конференции, в которых принимают участие ведущие специалисты
+                    из разных регионов.
+                    На нашем сайте вы можете увидеть галерею фотографий с наших последних мероприятий.</p>
+                    </div>
+            </div>
+
+
+        <div class="col-md-6 ps-0">
+            <div class="ms-3 ms-md-0 swiper mySwiper ">
+                <div class="swiper-wrapper " id="lightgallery">
+
+                    <div class="swiper-slide" style="max-height:40rem;">
+                        <a href="{% static 'img/about/1.png' %}">
+                            <img src="{% static 'img/about/1.png' %}" alt="Image 1"
+                                 class="img-fluid rounded-5 ">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/about/2.png' %}">
+                            <img src="{% static 'img/about/2.png' %}" alt="Image 2"
+                                 class="img-fluid rounded-5 ">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/about/3.png' %}">
+                            <img src="{% static 'img/about/3.png' %}" alt="Image 3"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/about/4.png' %}">
+                            <img src="{% static 'img/about/4.png' %}" alt="Image 4"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/about/5.png' %}">
+                            <img src="{% static 'img/about/5.png' %}" alt="Image 5"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{% static 'img/about/6.png' %}">
+                            <img src="{% static 'img/about/6.png' %}" alt="Image 6"
+                                 class="img-fluid rounded-5">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
 
-        <div class='col-md-6 p-0'>
-            <img class='img-fluid  rounded-5' src="{% static 'img/index_double.jpg' %}">
-        </div>
-
-
     </div>
+
 </div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- LightGallery JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+
+<script src="{% static 'js/photos_swiper.js' %}"></script>
+
+<style>
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.2s;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+</style>
 
 
 {% endblock %}

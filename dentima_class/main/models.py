@@ -150,15 +150,12 @@ class Tag(models.Model):
     def __str__(self):
         return self.text
 
-def get_upload_path(instance,filename):
-    return os.path.join('uploads', 'archive', instance.title, filename)
-
 class ArchiveAlbum(models.Model):
     title = models.TextField(verbose_name='Название альбома')
     slug = models.SlugField(max_length=250, unique=True, blank=True, null=True,
                             verbose_name='Часть ссылки (автозаполняется)')
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    photo_cover = models.ImageField(upload_to=get_upload_path, verbose_name='Обложка')
+    photo_cover = models.ImageField(upload_to='uploads/archive/covers', verbose_name='Обложка',max_length=500)
 
 
     def save(self, *args, **kwargs):

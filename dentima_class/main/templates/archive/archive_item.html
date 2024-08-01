@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"/>
+
+<div class="container">
+  <div class="row mx-0" id="bootstrap-image-gallery">
+    {% for column in photo_columns %}
+    <div class="col-lg-4 col-md-6 col-12 mb-4 ">
+      {% for photo in column %}
+        {% if forloop.counter|divisibleby:3 == 0 %}
+          <a class="lg-item" data-lg-size="{{ photo.width }}-{{ photo.height }}"
+             data-src="{{ photo.photo.url }}">
+            <img src="{{ photo.photo.url }}" class="w-100 shadow-1-strong mb-3" alt="Photo" />
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
+<script>
+const container = document.querySelector('#bootstrap-image-gallery');
+window.lightGallery(container, {
+    selector: '.lg-item',
+    plugins: [
+        lgZoom,
+        lgThumbnail
+    ],
+});
+</script>
+
+{% endblock %}

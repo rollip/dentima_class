@@ -43,6 +43,8 @@ a {
     margin-bottom:10px;
     }
 
+body.lg-on {
+overflow: hidden;}
 
 
 

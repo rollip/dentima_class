@@ -3,7 +3,11 @@
 
 {% block css %}
 <style>
+    .background {
+        background-color: #e9ecef;
+    }
 
+  @media (min-width: 1000px) {
     .background {
     background-image: url("{{ seminar.image.url }}");
       background-size: cover;
@@ -17,17 +21,22 @@
 {% block content %}
 
 
-<div class="py-5 background bg-light" >
+<div class="py-5 background " >
 
 
     <div class="container col-md-12" >
         <div class="row">
+            <div class='col-md-6'>
+                <div class="w-100 mb-4 mb-md-0">
+                    <img class='img-fluid object-fit-cover rounded-5 overflow-hidden d-md-none' src="{{ seminar.image.url }}">
+                </div>
+            </div>
 
 
-            <div class='col-md-6 ms-auto my-5 my-md-0'>
+            <div class='col-md-6 '>
                 <div class="h-100 overflow-hidden">
-                    <div class=' h-100 d-flex flex-column p-md-5 py-5 px-3 p-3 rounded-5 bg-white shadow-sm'>
-                        <p class="fw-bold display-6 mb-md-4 mb-5  "> {{ seminar.name }} </p>
+                    <div class=' h-100 d-flex flex-column p-md-5 py-5 px-3 p-3 rounded-5 bg-white '>
+                        <p class="fw-bold display-6 mb-md-4 mb-5"> {{ seminar.name }} </p>
                         <div class="d-grid gap-1 ">
                             <div class="rounded-5 bg-white p-3 border">
                                 <div class="  d-flex align-items-center">
@@ -64,9 +73,9 @@
                             </div>
 
 
-                            <div class="d-flex flex-row my-2 gap-1">
+                            <div class="d-flex flex-row my-2 mb-4 gap-1 flex-wrap">
                                 {% for tag in seminar.tags.all %}
-                                <p class="p-2 rounded-5 bg-white " style=" border: 1px solid #a4c639">{{ tag.text }}</p>
+                                <p class="m-0 px-2 py-1 rounded-5 bg-white " style=" border: 1px solid #a4c639"><small>{{ tag.text }}</small></p>
                                 {% endfor %}
                             </div>
 

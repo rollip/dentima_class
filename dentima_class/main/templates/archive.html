@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
+
+
+<div class="container text-center my-5">
+    <p class="display-6 fw-bold"> Архив мероприятий</p>
+    <p class="fs-5">Здесь вы можете увидеть фотоархив мероприятий, проведенных Dentima Class  </p>
+</div>
 
 <div class="container">
     <div class="row">
         {% for archive in archives %}
-        <div class="col-md-6 " >
-            <div class="overflow-hidden rounded-5" style="max-height:25rem;">
-                <img class="img-fluid " src="{{ archive.photo_cover.url }}" >
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 rounded-5 overflow-hidden border-0 shadow-sm" >
+                <div class="card-img-container" style="height: 20rem;">
+                    <a href="{{ archive.slug }}">  <img src="{{ archive.photo_cover.url }}" class="card-img-top img-fluid" style="height: 100%; object-fit: cover;" alt="{{ archive.title }}"> </a>
+                </div>
+                <div class="card-body" style="height: 8rem;">
+                    <a class="card-title fs-5" href="{{ archive.slug }}">{{ archive.title }}</a>
+                </div>
             </div>
-
         </div>
         {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}

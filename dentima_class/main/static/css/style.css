@@ -43,6 +43,13 @@ a {
     margin-bottom:10px;
     }
 
+body.lg-on::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  display: none;
+}
+
+
+
 .btn-mystyle {
     border-radius:10px;
     color:white;

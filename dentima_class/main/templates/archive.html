@@ -3,6 +3,18 @@
 
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        {% for archive in archives %}
+        <div class="col-md-6 " >
+            <div class="overflow-hidden rounded-5" style="max-height:25rem;">
+                <img class="img-fluid " src="{{ archive.photo_cover.url }}" >
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 
 {% endblock %}

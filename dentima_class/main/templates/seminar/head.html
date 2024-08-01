@@ -1,21 +1,30 @@
 {% load static %}
 
+
+{% block css %}
+<style>
+
+    .background {
+    background-image: url("{{ seminar.image.url }}");
+      background-size: cover;
+       background-position: center center;
+    }
+    }
+</style>
+
+{% endblock %}
+
 {% block content %}
 
 
-<div class="py-5 bg-light" style="background:#D2EFFC">
+<div class="py-5 background bg-light" >
 
 
     <div class="container col-md-12" >
         <div class="row">
-            <div class='col-md-7'>
-                <div class="w-100 mb-4 mb-md-0">
-                    <img class='img-fluid object-fit-cover rounded-5 overflow-hidden' src="{{ seminar.image.url }}">
-                </div>
-            </div>
 
 
-            <div class='col-md-5 '>
+            <div class='col-md-6 ms-auto my-5 my-md-0'>
                 <div class="h-100 overflow-hidden">
                     <div class=' h-100 d-flex flex-column p-md-5 py-5 px-3 p-3 rounded-5 bg-white shadow-sm'>
                         <p class="fw-bold display-6 mb-md-4 mb-5  "> {{ seminar.name }} </p>

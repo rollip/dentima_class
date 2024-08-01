@@ -27,7 +27,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
         selector: 'a',
         hideScrollbar: true,
         plugins: [
-            lgZoom,
-            lgThumbnail
+            lgZoom
         ],
     });

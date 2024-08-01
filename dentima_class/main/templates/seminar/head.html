@@ -4,16 +4,11 @@
 {% block css %}
 <style>
     .background {
-        background-color: #e9ecef;
+      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3) ), url("{{ seminar.image.url }}");
+      background-size: cover;
+      background-position: center center;
     }
 
-  @media (min-width: 1000px) {
-    .background {
-    background-image: url("{{ seminar.image.url }}");
-      background-size: cover;
-       background-position: center center;
-    }
-    }
 </style>
 
 {% endblock %}

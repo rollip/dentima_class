@@ -19,10 +19,15 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 
   });
 
-  lightGallery(document.getElementById('lightgallery'), {
-    selector: 'a',
-    hideScrollbar: true,
-    plugins: [lgZoom, lgThumbnail],
-    speed: 500,
-    thumbnail: true,
-  });
+
+
+
+    const container = document.querySelector('#lightgallery');
+    window.lightGallery(container, {
+        selector: 'a',
+        hideScrollbar: true,
+        plugins: [
+            lgZoom,
+            lgThumbnail
+        ],
+    });

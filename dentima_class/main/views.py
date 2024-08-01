@@ -1,22 +1,14 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from .forms import ArchiveAlbumForm
 from .mail import *
 from .models import Lector, Seminar, ArchiveAlbum, ArchivePhoto
 from django.shortcuts import redirect
-
-import re
-
-# Create your views here.
-#     lectors = Lector.objects.all() 'lectors' : lectors,
+from .views_helpers import *
 
 
-def extract_youtube_id(url):
-    # Регулярное выражение для извлечения ID видео из URL
-    pattern = re.compile(r'(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})')
-    match = pattern.search(url)
-    return match.group(1) if match else None
+
 
 
 
@@ -46,21 +38,12 @@ def lector(request, lector_slug):
 
 def seminar(request, seminar_slug=None):
 
-    if seminar_slug is None:
-        seminars = Seminar.objects.all()
-        context = {
-            'seminars': seminars,
-        }
-        return render(request, 'all_seminars_page.html',context)
-
-
-    else:
+    if seminar_slug:
         try:
             seminar = Seminar.objects.get(slug=seminar_slug)
             lectors = [seminar.lector]
             if seminar.lector_2:
                 lectors.append(seminar.lector_2)
-
 
         except Seminar.DoesNotExist:
             return HttpResponse('404')
@@ -68,7 +51,6 @@ def seminar(request, seminar_slug=None):
         context = {
                 'seminar': seminar,
                 'lectors': lectors,
-
             }
 
         if seminar.video_url:
@@ -77,9 +59,39 @@ def seminar(request, seminar_slug=None):
 
         return render(request, 'seminar.html',context)
 
+    else:
+        seminars = Seminar.objects.all()
+        context = {
+            'seminars': seminars,
+        }
+        return render(request, 'all_seminars_page.html',context)
 
-def archive(request):
-    return render(request, 'archive.html')
+
+
+def archive(request, archive_slug=None):
+    if archive_slug:
+        # Получение альбома по slug или возврат 404, если не найден
+        archive_album = get_object_or_404(ArchiveAlbum, slug=archive_slug)
+        # Получение всех фотографий, принадлежащих этому альбому
+        archive_photos = ArchivePhoto.objects.filter(album=archive_album)
+
+        # Группировка фотографий на три колонки
+        photo_columns = grouped(archive_photos, 3)
+
+        context = {
+            'archive_album': archive_album,
+            'photo_columns': photo_columns,
+        }
+
+        return render(request, 'archive/archive_item.html', context)
+    else:
+        # Получение всех альбомов
+        archives = ArchiveAlbum.objects.all()
+        context = {
+            'archives': archives,
+        }
+        return render(request, 'archive.html', context)
+
 
 def contact(request):
     return render(request, 'contact.html')

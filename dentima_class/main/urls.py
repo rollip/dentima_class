@@ -6,9 +6,13 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', views.index),
+
     path('seminar/', views.seminar),
     path('seminar/<seminar_slug>', views.seminar),
+
     path('archive/', views.archive),
+    path('archive/<archive_slug>', views.archive),
+
     path('about/', views.about),
     path('contact/', views.contact),
     path('send_email', views.mail),

@@ -2,7 +2,14 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
 from django.utils.text import slugify
+from PIL import Image
 import os
+
+def get_image_dimensions(image_path):
+    with Image.open(image_path) as img:
+        return img.width, img.height
+
+
 
 class Lector(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name='Имя')
@@ -148,8 +155,17 @@ def get_upload_path(instance,filename):
 
 class ArchiveAlbum(models.Model):
     title = models.TextField(verbose_name='Название альбома')
+    slug = models.SlugField(max_length=250, unique=True, blank=True, null=True,
+                            verbose_name='Часть ссылки (автозаполняется)')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     photo_cover = models.ImageField(upload_to=get_upload_path, verbose_name='Обложка')
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 
@@ -158,3 +174,16 @@ class ArchivePhoto(models.Model):
     album = models.ForeignKey(ArchiveAlbum, related_name='photos', on_delete=models.CASCADE, verbose_name='Альбом')
     photo = models.FileField(upload_to='uploads/archive/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    width = models.CharField(max_length=10, default='0')
+    height = models.CharField(max_length=10,default='0')
+
+    def save(self, *args, **kwargs):
+        # Open the image file
+        img = Image.open(self.photo)
+
+        # Store the width and height
+        self.width = str(img.width)
+        self.height = str(img.height)
+
+        # Call the parent save method
+        super().save(*args, **kwargs)

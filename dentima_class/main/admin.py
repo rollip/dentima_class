@@ -55,3 +55,4 @@ class SeminarArchiveAdmin(admin.ModelAdmin):
 @admin.register(ArchiveAlbum)
 class ArchiveAlbumAdmin(admin.ModelAdmin):
     inlines = [ArchivePhotoInline]
+    prepopulated_fields = {'slug': ('title',)}
